@@ -86,26 +86,6 @@ A backend-focused real-time chat platform with authentication, persistence, cont
 
 ---
 
-# 👨‍💻 About Me
-
-> Turning ideas into working systems.
-
-I build at the intersection of **Machine Learning, AI, Computer Vision, and Backend Engineering**.
-
-🧠 Building Machine Learning algorithms **from scratch** to understand what happens beneath `model.fit()`.
-
-👁️ Working with **OpenCV + MediaPipe** for real-time exercise tracking and posture analysis.
-
-⚙️ Building backend systems with **Spring Boot, FastAPI, REST APIs, JWT, Redis, Kafka, MySQL, and MongoDB**.
-
-🐳 Exploring production engineering through **Docker, CI/CD, microservices, and deployment workflows**.
-
-✍️ Writing beginner-friendly technical articles about **Machine Learning, databases, backend systems, and software engineering concepts**.
-
-🎯 Interested in opportunities across **ML/AI Engineering, Python Development, and Backend Engineering**.
-
----
-
 # 🛠️ Skills & Technologies
 
 ### 🧠 Languages & AI
@@ -151,60 +131,6 @@ I build at the intersection of **Machine Learning, AI, Computer Vision, and Back
 </div>
 
 ---
-
-# ✍️ Technical Writing
-
-I write about concepts I learn while building, with an emphasis on understanding **why something works**, not only how to call a library.
-
-<div align="center">
-
-<img src="https://img.shields.io/badge/Machine%20Learning-1F6FEB?style=flat-square" />
-<img src="https://img.shields.io/badge/Artificial%20Intelligence-1F6FEB?style=flat-square" />
-<img src="https://img.shields.io/badge/Databases-1F6FEB?style=flat-square" />
-<img src="https://img.shields.io/badge/Backend%20Engineering-1F6FEB?style=flat-square" />
-<img src="https://img.shields.io/badge/Software%20Engineering-1F6FEB?style=flat-square" />
-<img src="https://img.shields.io/badge/Developer%20Tools-1F6FEB?style=flat-square" />
-
-<br/><br/>
-
-<a href="https://medium.com/@chowdhuryarchan76">
-  <img src="https://img.shields.io/badge/Read_My_Articles_on_Medium-000000?style=for-the-badge&logo=medium&logoColor=white" />
-</a>
-
-</div>
-
----
-
-# 🧭 Current Direction
-
-<table>
-<tr>
-
-<td width="50%" valign="top">
-
-### 🤖 AI / ML
-
-- Machine Learning Fundamentals
-- Computer Vision
-- Model Implementation From Scratch
-- Production-Minded ML Systems
-
-</td>
-
-<td width="50%" valign="top">
-
-### ⚙️ Backend Engineering
-
-- Spring Boot
-- FastAPI
-- Microservices
-- Redis + Kafka
-- Docker + CI/CD
-
-</td>
-
-</tr>
-</table>
 
 <div align="center">
 
