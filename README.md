@@ -11,129 +11,167 @@
 <a href="https://github.com/Archan47?tab=followers">
   <img src="https://img.shields.io/github/followers/Archan47?label=Followers&style=for-the-badge&logo=github&color=238636" />
 </a>
+
 <a href="https://github.com/Archan47?tab=repositories">
   <img src="https://img.shields.io/badge/Repositories-Explore-1F6FEB?style=for-the-badge&logo=github" />
 </a>
+
 <a href="https://medium.com/@chowdhuryarchan76">
   <img src="https://img.shields.io/badge/Medium-Technical%20Writing-000000?style=for-the-badge&logo=medium&logoColor=white" />
 </a>
 
 </div>
 
-👨‍💻 About Me
+---
 
-I build at the intersection of Machine Learning, AI, Computer Vision, and Backend Engineering.
-
-🧠 Building ML algorithms from scratch to understand what happens beneath model.fit().
-
-👁️ Working with OpenCV + MediaPipe for real-time exercise tracking and posture analysis.
-
-⚙️ Building backend systems with Spring Boot, FastAPI, REST APIs, JWT, Redis, Kafka, MySQL, and MongoDB.
-
-🐳 Learning production engineering through Docker, CI/CD, microservices, and deployment workflows.
-
-✍️ Writing beginner-friendly technical articles about Machine Learning, databases, backend systems, and engineering concepts.
-
-🎯 Interested in opportunities across ML/AI Engineering, Python Development, and Backend Engineering.
-
-🚀 What I Build
+# 🚀 Featured Projects
 
 <table>
+
 <tr>
+
 <td width="50%" valign="top">
 
-🧠 Machine Learning From Scratch
+## 🧠 Machine Learning From Scratch
 
-Implementing core ML algorithms manually to understand the mathematics, assumptions, training process, and prediction logic behind them.
+Implementing core Machine Learning algorithms manually to understand the mathematics, assumptions, training process, and prediction logic behind them.
 
-Focus: KNN · Gaussian Naive Bayes · Decision Trees · ML fundamentals
+**Focus**
+
+`KNN` · `Gaussian Naive Bayes` · `Decision Trees` · `ML Fundamentals`
+
+<br/>
 
 <a href="https://github.com/Archan47/Machine-Learning-Algorithms-From-Scratch">
   <img src="https://img.shields.io/badge/View_Project-181717?style=for-the-badge&logo=github&logoColor=white" />
 </a>
 
 </td>
+
+
 <td width="50%" valign="top">
 
-🏋️ FitVision
+## 🏋️ FitVision
 
-A fitness platform combining a secure backend with computer-vision-powered workout tracking.
+A fitness platform combining secure backend architecture with computer-vision-powered exercise tracking and posture analysis.
 
-Focus: Spring Boot · Python · MediaPipe · OpenCV · JWT · Microservices
+**Focus**
+
+`Spring Boot` · `Python` · `MediaPipe` · `OpenCV` · `JWT` · `Microservices`
 
 </td>
+
 </tr>
+
 
 <tr>
+
 <td width="50%" valign="top">
 
-🌱 AgroVeda
+## 🌱 AgroVeda
 
-Smart-agriculture tooling combining ML predictions, crop utilities, computer vision, weather data, and IoT ideas.
+A smart agriculture platform combining Machine Learning predictions, crop utilities, computer vision, weather information, and IoT concepts.
 
-Focus: XGBoost · Flask · React · OpenCV · IoT
+**Focus**
+
+`XGBoost` · `Flask` · `React` · `OpenCV` · `IoT`
 
 </td>
+
+
 <td width="50%" valign="top">
 
-💬 Real-Time Group Chat
+## 💬 Real-Time Group Chat
 
-Backend-focused chat platform with authentication, persistence, containers, and production-oriented configuration.
+A backend-focused real-time chat platform with authentication, persistence, containerization, and production-oriented configuration.
 
-Focus: Spring Boot · MongoDB · JWT · Docker
+**Focus**
+
+`Spring Boot` · `MongoDB` · `JWT` · `Docker`
 
 </td>
+
 </tr>
+
 </table>
 
-🛠️ Tech Stack
+---
 
-Languages & AI
+# 👨‍💻 About Me
+
+I build at the intersection of **Machine Learning, AI, Computer Vision, and Backend Engineering**.
+
+🧠 Building Machine Learning algorithms **from scratch** to understand what happens beneath `model.fit()`.
+
+👁️ Working with **OpenCV + MediaPipe** for real-time exercise tracking and posture analysis.
+
+⚙️ Building backend systems with **Spring Boot, FastAPI, REST APIs, JWT, Redis, Kafka, MySQL, and MongoDB**.
+
+🐳 Exploring production engineering through **Docker, CI/CD, microservices, and deployment workflows**.
+
+✍️ Writing beginner-friendly technical articles about **Machine Learning, databases, backend systems, and software engineering concepts**.
+
+🎯 Interested in opportunities across **ML/AI Engineering, Python Development, and Backend Engineering**.
+
+---
+
+# 🛠️ Skills & Technologies
+
+### 🧠 Languages & AI
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,java,js,tensorflow,opencv,sklearn&theme=dark&perline=8" />
+
+<img src="https://skillicons.dev/icons?i=python,java,js,tensorflow,opencv,sklearn&theme=dark&perline=8" />
+
 </p>
 
-Backend & Databases
+### ⚙️ Backend & Databases
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=spring,fastapi,redis,kafka,mysql,mongodb&theme=dark&perline=8" />
+
+<img src="https://skillicons.dev/icons?i=spring,fastapi,redis,kafka,mysql,mongodb&theme=dark&perline=8" />
+
 </p>
 
-Frontend, DevOps & Tools
+### 🐳 Frontend, DevOps & Tools
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=react,docker,git,github,postman,linux,vscode&theme=dark&perline=8" />
+
+<img src="https://skillicons.dev/icons?i=react,docker,git,github,postman,linux,vscode&theme=dark&perline=8" />
+
 </p>
 
-📊 GitHub Activity
+---
+
+# 📊 Contribution Highlights
 
 <div align="center">
 
-<img width="96%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Archan47&theme=github_dark&animation=load&duration=2" />
+<img width="96%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Archan47&theme=github_dark" />
 
-<br/><br/>
+<br/>
+<br/>
 
 <img height="165" src="https://github-stats-extended.vercel.app/api?username=Archan47&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true" />
+
 <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs/?username=Archan47&layout=compact&theme=github_dark&hide_border=true&langs_count=8" />
 
 </div>
 
-🐍 Contribution Graph
+---
 
-<div align="center">
+# ✍️ Technical Writing
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Archan47/Archan47/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Archan47/Archan47/output/github-contribution-grid-snake.svg" />
-  <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/Archan47/Archan47/output/github-contribution-grid-snake.svg" />
-</picture>
+I write about concepts I learn while building, with an emphasis on understanding **why something works**, not only how to call a library.
 
-</div>
+Topics I explore include:
 
-✍️ Technical Writing
-
-I write about concepts I learn while building — with an emphasis on understanding why something works, not only how to call a library.
+- Machine Learning
+- Artificial Intelligence
+- Databases
+- Backend Engineering
+- Software Engineering
+- Developer Tools
 
 <div align="center">
 
@@ -143,25 +181,21 @@ I write about concepts I learn while building — with an emphasis on understand
 
 </div>
 
-🧭 Current Direction
+---
 
+# 🧭 Current Direction
+
+```text
 AI / ML
-├── Machine Learning fundamentals
+├── Machine Learning Fundamentals
 ├── Computer Vision
-├── Model implementation from scratch
-└── Production-minded ML systems
+├── Model Implementation From Scratch
+└── Production-Minded ML Systems
 
-Backend
+
+Backend Engineering
 ├── Spring Boot
 ├── FastAPI
 ├── Microservices
 ├── Redis + Kafka
 └── Docker + CI/CD
-
-<div align="center">
-
-Build • Understand • Ship • Repeat
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=110&color=0:0D1117,45:161B22,100:58A6FF&section=footer" width="100%" />
-
-</div>
