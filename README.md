@@ -2,7 +2,7 @@
 
 Archan Kundu Chowdhury
 
-Machine Learning • AI • Backend Engineering
+Full Stack Development • Microservice architecture • Data Analysis • Machine Learning • GenAI
 
 <br/>
 
