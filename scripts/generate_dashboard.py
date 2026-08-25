@@ -1,15 +1,34 @@
 #!/usr/bin/env python3
+
 import os
 import json
 import html
 import urllib.request
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, time, timezone
+from zoneinfo import ZoneInfo
 
 USERNAME = os.getenv("PROFILE_USERNAME", "Archan47")
 TOKEN = os.environ["GH_TOKEN"]
 
-now = datetime.now(timezone.utc)
-start = now - timedelta(days=364)
+LOCAL_TZ = ZoneInfo("Asia/Kolkata")
+
+local_now = datetime.now(LOCAL_TZ)
+local_today = local_now.date()
+
+range_start_local = datetime.combine(
+    local_today - timedelta(days=364),
+    time.min,
+    tzinfo=LOCAL_TZ,
+)
+
+range_end_local = datetime.combine(
+    local_today,
+    time.max,
+    tzinfo=LOCAL_TZ,
+)
+
+range_start_utc = range_start_local.astimezone(timezone.utc)
+range_end_utc = range_end_local.astimezone(timezone.utc)
 
 query = r'''
 query($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -21,6 +40,7 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
       totalPullRequestContributions
       totalIssueContributions
       totalRepositoriesWithContributedCommits
+      restrictedContributionsCount
       contributionCalendar {
         totalContributions
         weeks {
@@ -31,7 +51,11 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
         }
       }
     }
-    repositories(first: 100, ownerAffiliations: OWNER, orderBy: {field: UPDATED_AT, direction: DESC}) {
+    repositories(
+      first: 100,
+      ownerAffiliations: OWNER,
+      orderBy: {field: UPDATED_AT, direction: DESC}
+    ) {
       nodes {
         isFork
         stargazerCount
@@ -50,9 +74,16 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
 }
 '''
 
-def graphql(query, variables):
-    body = json.dumps({"query": query, "variables": variables}).encode()
-    req = urllib.request.Request(
+
+def graphql(query_text, variables):
+    body = json.dumps(
+        {
+            "query": query_text,
+            "variables": variables,
+        }
+    ).encode("utf-8")
+
+    request = urllib.request.Request(
         "https://api.github.com/graphql",
         data=body,
         headers={
@@ -61,17 +92,24 @@ def graphql(query, variables):
             "User-Agent": "Archan47-profile-dashboard",
         },
     )
-    with urllib.request.urlopen(req, timeout=30) as response:
-        result = json.loads(response.read().decode())
+
+    with urllib.request.urlopen(request, timeout=30) as response:
+        result = json.loads(response.read().decode("utf-8"))
+
     if "errors" in result:
         raise RuntimeError(result["errors"])
+
     return result["data"]
 
-data = graphql(query, {
-    "login": USERNAME,
-    "from": start.isoformat(),
-    "to": now.isoformat(),
-})["user"]
+
+data = graphql(
+    query,
+    {
+        "login": USERNAME,
+        "from": range_start_utc.isoformat(),
+        "to": range_end_utc.isoformat(),
+    },
+)["user"]
 
 if not data:
     raise RuntimeError(f"GitHub user {USERNAME!r} was not found")
@@ -80,195 +118,646 @@ contrib = data["contributionsCollection"]
 calendar = contrib["contributionCalendar"]
 
 days = []
+
 for week in calendar["weeks"]:
     for day in week["contributionDays"]:
-        days.append((day["date"], int(day["contributionCount"])))
+        days.append(
+            (
+                day["date"],
+                int(day["contributionCount"]),
+            )
+        )
+
 days.sort()
 
-counts = {d: c for d, c in days}
-today = now.date()
-cursor = today
+counts = {
+    date_string: count
+    for date_string, count in days
+}
+
+cursor = local_today
+
 if counts.get(cursor.isoformat(), 0) == 0:
     cursor -= timedelta(days=1)
 
-current_streak = 0
 current_end = cursor
+current_streak = 0
+
 while counts.get(cursor.isoformat(), 0) > 0:
     current_streak += 1
     cursor -= timedelta(days=1)
+
 current_start = cursor + timedelta(days=1)
 
-longest = 0
+if current_streak == 0:
+    current_start = None
+    current_end = None
+
+longest_streak = 0
 longest_start = None
 longest_end = None
-run = 0
+
+run_length = 0
 run_start = None
-for d, c in days:
-    dt = datetime.strptime(d, "%Y-%m-%d").date()
-    if c > 0:
-        if run == 0:
-            run_start = dt
-        run += 1
-        if run > longest:
-            longest = run
+
+for date_string, contribution_count in days:
+    day_date = datetime.strptime(
+        date_string,
+        "%Y-%m-%d",
+    ).date()
+
+    if contribution_count > 0:
+        if run_length == 0:
+            run_start = day_date
+
+        run_length += 1
+
+        if run_length > longest_streak:
+            longest_streak = run_length
             longest_start = run_start
-            longest_end = dt
+            longest_end = day_date
     else:
-        run = 0
+        run_length = 0
         run_start = None
 
-repos = [r for r in data["repositories"]["nodes"] if not r["isFork"]]
-stars = sum(int(r["stargazerCount"]) for r in repos)
+repos = [
+    repo
+    for repo in data["repositories"]["nodes"]
+    if not repo["isFork"]
+]
+
+stars = sum(
+    int(repo["stargazerCount"])
+    for repo in repos
+)
 
 language_bytes = {}
 language_colors = {}
+
 for repo in repos:
     for edge in repo["languages"]["edges"]:
-        name = edge["node"]["name"]
-        language_bytes[name] = language_bytes.get(name, 0) + int(edge["size"])
-        if edge["node"].get("color"):
-            language_colors[name] = edge["node"]["color"]
+        language_name = edge["node"]["name"]
 
-total_language_bytes = sum(language_bytes.values()) or 1
-top_languages = sorted(language_bytes.items(), key=lambda x: x[1], reverse=True)[:7]
+        language_bytes[language_name] = (
+            language_bytes.get(language_name, 0)
+            + int(edge["size"])
+        )
+
+        if edge["node"].get("color"):
+            language_colors[language_name] = edge["node"]["color"]
+
+total_language_bytes = (
+    sum(language_bytes.values()) or 1
+)
+
+top_languages = sorted(
+    language_bytes.items(),
+    key=lambda item: item[1],
+    reverse=True,
+)[:7]
+
+profile_name = data.get("name") or USERNAME
+
+total_contributions = int(
+    calendar["totalContributions"]
+)
+
+restricted_contributions = int(
+    contrib.get("restrictedContributionsCount") or 0
+)
+
+commits = int(
+    contrib["totalCommitContributions"]
+)
+
+pull_requests = int(
+    contrib["totalPullRequestContributions"]
+)
+
+issues = int(
+    contrib["totalIssueContributions"]
+)
+
+repos_contributed = int(
+    contrib["totalRepositoriesWithContributedCommits"]
+)
 
 last_days = days[-31:]
-max_count = max([c for _, c in last_days] + [1])
 
-def esc(s):
-    return html.escape(str(s))
+max_count = max(
+    [count for _, count in last_days]
+    + [1]
+)
 
-def fmt_date(d):
-    if not d:
+
+def esc(value):
+    return html.escape(str(value))
+
+
+def format_date(date_value):
+    if not date_value:
         return "—"
-    return d.strftime("%b %d").replace(" 0", " ")
 
-def range_text(a, b):
-    if not a or not b:
+    return date_value.strftime(
+        "%b %d"
+    ).replace(
+        " 0",
+        " ",
+    )
+
+
+def range_text(start_date, end_date):
+    if not start_date or not end_date:
         return "—"
-    return f"{fmt_date(a)} – {fmt_date(b)}"
 
-name = data.get("name") or USERNAME
-total_contributions = int(calendar["totalContributions"])
-commits = int(contrib["totalCommitContributions"])
-prs = int(contrib["totalPullRequestContributions"])
-issues = int(contrib["totalIssueContributions"])
-repos_contributed = int(contrib["totalRepositoriesWithContributedCommits"])
+    return (
+        f"{format_date(start_date)} – "
+        f"{format_date(end_date)}"
+    )
 
-W, H = 1360, 620
-bg = "#0d1117"
-text = "#f0f6fc"
-muted = "#c9d1d9"
-blue = "#2f81f7"
-green = "#39d353"
-grid = "#18304a"
-border = "#30363d"
 
-gx, gy, gw, gh = 780, 382, 525, 145
-points = []
-for i, (_, count) in enumerate(last_days):
-    x = gx + (gw * i / max(1, len(last_days) - 1))
-    y = gy + gh - (count / max_count) * gh
-    points.append(f"{x:.1f},{y:.1f}")
+WIDTH = 1360
+HEIGHT = 620
+
+BACKGROUND = "#0d1117"
+TEXT = "#f0f6fc"
+MUTED = "#c9d1d9"
+BLUE = "#2f81f7"
+GREEN = "#39d353"
+GRID = "#18304a"
+BORDER = "#30363d"
+
+graph_x = 780
+graph_y = 382
+graph_width = 525
+graph_height = 145
+
+graph_points = []
+
+for index, (_, contribution_count) in enumerate(last_days):
+    x = (
+        graph_x
+        + (
+            graph_width
+            * index
+            / max(
+                1,
+                len(last_days) - 1,
+            )
+        )
+    )
+
+    y = (
+        graph_y
+        + graph_height
+        - (
+            contribution_count
+            / max_count
+        )
+        * graph_height
+    )
+
+    graph_points.append(
+        f"{x:.1f},{y:.1f}"
+    )
 
 svg = []
-svg.append(f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc">
-<title id="title">{esc(name)} GitHub dashboard</title>
-<desc id="desc">GitHub statistics, top languages, contribution streaks, and recent contribution activity.</desc>
-<rect width="100%" height="100%" rx="14" fill="{bg}" stroke="{border}" stroke-width="2"/>
-<style>
-  text {{ font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }}
-  .title {{ fill:{blue}; font-size:18px; font-weight:600; }}
-  .label {{ fill:{muted}; font-size:14px; font-weight:600; }}
-  .value {{ fill:{text}; font-size:15px; font-weight:700; }}
-  .big {{ fill:{text}; font-size:34px; font-weight:700; }}
-  .small {{ fill:{green}; font-size:13px; }}
-  .axis {{ fill:{blue}; font-size:9px; }}
-</style>
-''')
 
-svg.append(f'<text x="350" y="56" class="title">{esc(name)}&#39;s GitHub Stats</text>')
+svg.append(
+    f'''<svg xmlns="http://www.w3.org/2000/svg"
+width="{WIDTH}"
+height="{HEIGHT}"
+viewBox="0 0 {WIDTH} {HEIGHT}"
+role="img"
+aria-labelledby="title desc">
+
+<title id="title">{esc(profile_name)} GitHub dashboard</title>
+
+<desc id="desc">
+GitHub statistics, languages, contribution streaks,
+and recent contribution activity.
+</desc>
+
+<rect
+  width="100%"
+  height="100%"
+  rx="14"
+  fill="{BACKGROUND}"
+  stroke="{BORDER}"
+  stroke-width="2"
+/>
+
+<style>
+  text {{
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }}
+
+  .title {{
+    fill: {BLUE};
+    font-size: 18px;
+    font-weight: 600;
+  }}
+
+  .label {{
+    fill: {MUTED};
+    font-size: 14px;
+    font-weight: 600;
+  }}
+
+  .value {{
+    fill: {TEXT};
+    font-size: 15px;
+    font-weight: 700;
+  }}
+
+  .big {{
+    fill: {TEXT};
+    font-size: 34px;
+    font-weight: 700;
+  }}
+
+  .small {{
+    fill: {GREEN};
+    font-size: 13px;
+  }}
+
+  .axis {{
+    fill: {BLUE};
+    font-size: 9px;
+  }}
+</style>
+'''
+)
+
+svg.append(
+    f'<text x="350" y="56" class="title">'
+    f'{esc(profile_name)}&#39;s GitHub Stats'
+    f'</text>'
+)
+
 stats = [
     ("★", "Total Stars Earned:", stars),
     ("↻", "Commits (last year):", commits),
-    ("⑂", "Pull Requests (last year):", prs),
+    ("⑂", "Pull Requests (last year):", pull_requests),
     ("!", "Issues (last year):", issues),
     ("▣", "Repos contributed to:", repos_contributed),
 ]
-y = 92
+
+stats_y = 92
+
 for icon, label, value in stats:
-    svg.append(f'<text x="350" y="{y}" fill="{blue}" font-size="18">{esc(icon)}</text>')
-    svg.append(f'<text x="378" y="{y}" class="label">{esc(label)}</text>')
-    svg.append(f'<text x="590" y="{y}" class="value">{value}</text>')
-    y += 28
+    svg.append(
+        f'<text x="350" y="{stats_y}" '
+        f'fill="{BLUE}" font-size="18">'
+        f'{esc(icon)}'
+        f'</text>'
+    )
 
-svg.append(f'<circle cx="700" cy="126" r="43" fill="none" stroke="#19324f" stroke-width="8"/>')
-svg.append(f'<path d="M700 83 A43 43 0 0 1 738 105" fill="none" stroke="{blue}" stroke-width="8" stroke-linecap="round"/>')
-svg.append(f'<text x="700" y="134" text-anchor="middle" fill="{muted}" font-size="22" font-weight="700">GH</text>')
+    svg.append(
+        f'<text x="378" y="{stats_y}" class="label">'
+        f'{esc(label)}'
+        f'</text>'
+    )
 
-svg.append(f'<text x="852" y="56" class="title">Most Used Languages</text>')
-bar_x, bar_y, bar_w = 852, 82, 270
-cursor_x = bar_x
-for name_lang, size in top_languages:
-    pct = size / total_language_bytes
-    seg = max(2, bar_w * pct)
-    color = language_colors.get(name_lang, blue)
-    svg.append(f'<rect x="{cursor_x:.1f}" y="{bar_y}" width="{seg:.1f}" height="9" rx="3" fill="{color}"/>')
-    cursor_x += seg
+    svg.append(
+        f'<text x="590" y="{stats_y}" class="value">'
+        f'{value}'
+        f'</text>'
+    )
 
-fallback_colors = ["#e34c26","#f1e05a","#3572A5","#563d7c","#DA5B0B","#89e051","#00ADD8"]
-for idx, (lang, size) in enumerate(top_languages):
-    col = idx % 2
-    row = idx // 2
-    x = 852 + col * 185
+    stats_y += 28
+
+svg.append(
+    '<circle cx="700" cy="126" r="43" '
+    'fill="none" stroke="#19324f" stroke-width="8"/>'
+)
+
+svg.append(
+    f'<path d="M700 83 A43 43 0 0 1 738 105" '
+    f'fill="none" stroke="{BLUE}" stroke-width="8" '
+    f'stroke-linecap="round"/>'
+)
+
+svg.append(
+    f'<text x="700" y="134" text-anchor="middle" '
+    f'fill="{MUTED}" font-size="22" font-weight="700">'
+    f'GH'
+    f'</text>'
+)
+
+svg.append(
+    '<text x="852" y="56" class="title">'
+    'Most Used Languages'
+    '</text>'
+)
+
+language_bar_x = 852
+language_bar_y = 82
+language_bar_width = 270
+language_cursor_x = language_bar_x
+
+for language_name, size in top_languages:
+    percentage = size / total_language_bytes
+
+    segment_width = max(
+        2,
+        language_bar_width * percentage,
+    )
+
+    color = language_colors.get(
+        language_name,
+        BLUE,
+    )
+
+    svg.append(
+        f'<rect x="{language_cursor_x:.1f}" '
+        f'y="{language_bar_y}" '
+        f'width="{segment_width:.1f}" '
+        f'height="9" rx="3" '
+        f'fill="{color}"/>'
+    )
+
+    language_cursor_x += segment_width
+
+fallback_colors = [
+    "#e34c26",
+    "#f1e05a",
+    "#3572A5",
+    "#563d7c",
+    "#DA5B0B",
+    "#89e051",
+    "#00ADD8",
+]
+
+for index, (language_name, size) in enumerate(top_languages):
+    column = index % 2
+    row = index // 2
+
+    x = 852 + column * 185
     y = 123 + row * 29
-    color = language_colors.get(lang, fallback_colors[idx % len(fallback_colors)])
-    pct = size / total_language_bytes * 100
-    svg.append(f'<circle cx="{x+6}" cy="{y-4}" r="6" fill="{color}"/>')
-    svg.append(f'<text x="{x+20}" y="{y}" fill="{muted}" font-size="13">{esc(lang)} {pct:.2f}%</text>')
 
-svg.append(f'<line x1="40" y1="285" x2="1320" y2="285" stroke="{border}"/>')
+    color = language_colors.get(
+        language_name,
+        fallback_colors[
+            index % len(fallback_colors)
+        ],
+    )
 
-left_centers = [215, 435, 655]
-for x in [325, 545]:
-    svg.append(f'<line x1="{x}" y1="340" x2="{x}" y2="520" stroke="{green}" stroke-width="1"/>')
+    percentage = (
+        size
+        / total_language_bytes
+        * 100
+    )
 
-svg.append(f'<text x="{left_centers[0]}" y="400" text-anchor="middle" class="big">{total_contributions}</text>')
-svg.append(f'<text x="{left_centers[0]}" y="446" text-anchor="middle" fill="{text}" font-size="17">Total Contributions</text>')
-svg.append(f'<text x="{left_centers[0]}" y="484" text-anchor="middle" class="small">{esc(start.date().strftime("%b %d, %Y").replace(" 0", " "))} – Present</text>')
+    svg.append(
+        f'<circle cx="{x + 6}" cy="{y - 4}" '
+        f'r="6" fill="{color}"/>'
+    )
 
-cx, cy, r = left_centers[1], 396, 48
-svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="#19324f" stroke-width="8"/>')
-svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{blue}" stroke-width="8" stroke-linecap="round" stroke-dasharray="{max(15, min(290, current_streak*28))} 320" transform="rotate(-90 {cx} {cy})"/>')
-svg.append(f'<text x="{cx}" y="{cy+11}" text-anchor="middle" class="big">{current_streak}</text>')
-svg.append(f'<text x="{cx}" y="474" text-anchor="middle" fill="{text}" font-size="17" font-weight="700">Current Streak</text>')
-svg.append(f'<text x="{cx}" y="508" text-anchor="middle" class="small">{esc(range_text(current_start, current_end))}</text>')
+    svg.append(
+        f'<text x="{x + 20}" y="{y}" '
+        f'fill="{MUTED}" font-size="13">'
+        f'{esc(language_name)} {percentage:.2f}%'
+        f'</text>'
+    )
 
-svg.append(f'<text x="{left_centers[2]}" y="400" text-anchor="middle" class="big">{longest}</text>')
-svg.append(f'<text x="{left_centers[2]}" y="446" text-anchor="middle" fill="{text}" font-size="17">Longest Streak</text>')
-svg.append(f'<text x="{left_centers[2]}" y="484" text-anchor="middle" class="small">{esc(range_text(longest_start, longest_end))}</text>')
+svg.append(
+    f'<line x1="40" y1="285" x2="1320" y2="285" '
+    f'stroke="{BORDER}"/>'
+)
 
-svg.append(f'<text x="{gx + gw/2}" y="340" text-anchor="middle" class="title">{esc(name)}&#39;s Contribution Graph</text>')
-for i in range(6):
-    yline = gy + gh - gh * i / 5
-    val = round(max_count * i / 5)
-    svg.append(f'<line x1="{gx}" y1="{yline:.1f}" x2="{gx+gw}" y2="{yline:.1f}" stroke="{grid}" stroke-width="1" stroke-dasharray="2 3"/>')
-    svg.append(f'<text x="{gx-12}" y="{yline+3:.1f}" text-anchor="end" class="axis">{val}</text>')
-for i in range(0, len(last_days), 5):
-    x = gx + gw * i / max(1, len(last_days)-1)
-    label = last_days[i][0][-2:]
-    svg.append(f'<text x="{x:.1f}" y="{gy+gh+22}" text-anchor="middle" class="axis">{label}</text>')
+highlight_centers = [
+    215,
+    435,
+    655,
+]
 
-svg.append(f'<polyline points="{" ".join(points)}" fill="none" stroke="{blue}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>')
-for p, (_, count) in zip(points, last_days):
-    x, y = p.split(",")
-    svg.append(f'<circle cx="{x}" cy="{y}" r="3.3" fill="{text}"><title>{count} contributions</title></circle>')
+for divider_x in [
+    325,
+    545,
+]:
+    svg.append(
+        f'<line x1="{divider_x}" y1="340" '
+        f'x2="{divider_x}" y2="520" '
+        f'stroke="{GREEN}" stroke-width="1"/>'
+    )
 
-svg.append('</svg>')
+svg.append(
+    f'<text x="{highlight_centers[0]}" y="400" '
+    f'text-anchor="middle" class="big">'
+    f'{total_contributions}'
+    f'</text>'
+)
 
-out = os.path.join(os.path.dirname(__file__), "..", "assets", "github-dashboard.svg")
-os.makedirs(os.path.dirname(out), exist_ok=True)
-with open(out, "w", encoding="utf-8") as f:
-    f.write("\n".join(svg))
+svg.append(
+    f'<text x="{highlight_centers[0]}" y="446" '
+    f'text-anchor="middle" fill="{TEXT}" font-size="17">'
+    f'Total Contributions'
+    f'</text>'
+)
 
-print(f"Wrote {out}")
+start_label = (
+    range_start_local
+    .date()
+    .strftime("%b %d, %Y")
+    .replace(" 0", " ")
+)
+
+svg.append(
+    f'<text x="{highlight_centers[0]}" y="484" '
+    f'text-anchor="middle" class="small">'
+    f'{esc(start_label)} – Present'
+    f'</text>'
+)
+
+current_center_x = highlight_centers[1]
+current_center_y = 396
+current_radius = 48
+
+svg.append(
+    f'<circle cx="{current_center_x}" cy="{current_center_y}" '
+    f'r="{current_radius}" fill="none" '
+    f'stroke="#19324f" stroke-width="8"/>'
+)
+
+dash_amount = max(
+    15,
+    min(
+        290,
+        current_streak * 28,
+    ),
+)
+
+svg.append(
+    f'<circle cx="{current_center_x}" cy="{current_center_y}" '
+    f'r="{current_radius}" fill="none" '
+    f'stroke="{BLUE}" stroke-width="8" '
+    f'stroke-linecap="round" '
+    f'stroke-dasharray="{dash_amount} 320" '
+    f'transform="rotate(-90 '
+    f'{current_center_x} {current_center_y})"/>'
+)
+
+svg.append(
+    f'<text x="{current_center_x}" '
+    f'y="{current_center_y + 11}" '
+    f'text-anchor="middle" class="big">'
+    f'{current_streak}'
+    f'</text>'
+)
+
+svg.append(
+    f'<text x="{current_center_x}" y="474" '
+    f'text-anchor="middle" fill="{TEXT}" '
+    f'font-size="17" font-weight="700">'
+    f'Current Streak'
+    f'</text>'
+)
+
+svg.append(
+    f'<text x="{current_center_x}" y="508" '
+    f'text-anchor="middle" class="small">'
+    f'{esc(range_text(current_start, current_end))}'
+    f'</text>'
+)
+
+svg.append(
+    f'<text x="{highlight_centers[2]}" y="400" '
+    f'text-anchor="middle" class="big">'
+    f'{longest_streak}'
+    f'</text>'
+)
+
+svg.append(
+    f'<text x="{highlight_centers[2]}" y="446" '
+    f'text-anchor="middle" fill="{TEXT}" font-size="17">'
+    f'Longest Streak'
+    f'</text>'
+)
+
+svg.append(
+    f'<text x="{highlight_centers[2]}" y="484" '
+    f'text-anchor="middle" class="small">'
+    f'{esc(range_text(longest_start, longest_end))}'
+    f'</text>'
+)
+
+svg.append(
+    f'<text x="{graph_x + graph_width / 2}" '
+    f'y="340" text-anchor="middle" class="title">'
+    f'{esc(profile_name)}&#39;s Contribution Graph'
+    f'</text>'
+)
+
+for index in range(6):
+    horizontal_y = (
+        graph_y
+        + graph_height
+        - graph_height
+        * index
+        / 5
+    )
+
+    axis_value = round(
+        max_count
+        * index
+        / 5
+    )
+
+    svg.append(
+        f'<line x1="{graph_x}" y1="{horizontal_y:.1f}" '
+        f'x2="{graph_x + graph_width}" '
+        f'y2="{horizontal_y:.1f}" '
+        f'stroke="{GRID}" stroke-width="1" '
+        f'stroke-dasharray="2 3"/>'
+    )
+
+    svg.append(
+        f'<text x="{graph_x - 12}" '
+        f'y="{horizontal_y + 3:.1f}" '
+        f'text-anchor="end" class="axis">'
+        f'{axis_value}'
+        f'</text>'
+    )
+
+for index in range(
+    0,
+    len(last_days),
+    5,
+):
+    x = (
+        graph_x
+        + graph_width
+        * index
+        / max(
+            1,
+            len(last_days) - 1,
+        )
+    )
+
+    day_label = last_days[index][0][-2:]
+
+    svg.append(
+        f'<text x="{x:.1f}" '
+        f'y="{graph_y + graph_height + 22}" '
+        f'text-anchor="middle" class="axis">'
+        f'{day_label}'
+        f'</text>'
+    )
+
+svg.append(
+    f'<polyline '
+    f'points="{" ".join(graph_points)}" '
+    f'fill="none" '
+    f'stroke="{BLUE}" '
+    f'stroke-width="2.5" '
+    f'stroke-linejoin="round" '
+    f'stroke-linecap="round"/>'
+)
+
+for point, (_, contribution_count) in zip(
+    graph_points,
+    last_days,
+):
+    x, y = point.split(",")
+
+    svg.append(
+        f'<circle cx="{x}" cy="{y}" '
+        f'r="3.3" fill="{TEXT}">'
+        f'<title>{contribution_count} contributions</title>'
+        f'</circle>'
+    )
+
+svg.append("</svg>")
+
+output_path = os.path.join(
+    os.path.dirname(__file__),
+    "..",
+    "assets",
+    "github-dashboard.svg",
+)
+
+os.makedirs(
+    os.path.dirname(output_path),
+    exist_ok=True,
+)
+
+with open(
+    output_path,
+    "w",
+    encoding="utf-8",
+) as file:
+    file.write("\n".join(svg))
+
+print(f"Wrote {output_path}")
+print(f"Local date used for streak: {local_today}")
+print(f"Total contributions: {total_contributions}")
+print(
+    "Restricted contributions visible to token: "
+    f"{restricted_contributions}"
+)
+print(f"Current streak: {current_streak}")
