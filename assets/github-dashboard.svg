@@ -15,7 +15,7 @@
 <text x="350" y="56" class="title">Archan Kundu Chowdhury&#39;s GitHub Stats</text>
 <text x="350" y="92" fill="#2f81f7" font-size="18">★</text>
 <text x="378" y="92" class="label">Total Stars Earned:</text>
-<text x="590" y="92" class="value">0</text>
+<text x="590" y="92" class="value">1</text>
 <text x="350" y="120" fill="#2f81f7" font-size="18">↻</text>
 <text x="378" y="120" class="label">Commits (last year):</text>
 <text x="590" y="120" class="value">364</text>
@@ -32,25 +32,25 @@
 <path d="M700 83 A43 43 0 0 1 738 105" fill="none" stroke="#2f81f7" stroke-width="8" stroke-linecap="round"/>
 <text x="700" y="134" text-anchor="middle" fill="#c9d1d9" font-size="22" font-weight="700">GH</text>
 <text x="852" y="56" class="title">Most Used Languages</text>
-<rect x="852.0" y="82" width="255.9" height="9" rx="3" fill="#DA5B0B"/>
-<rect x="1107.9" y="82" width="4.8" height="9" rx="3" fill="#b07219"/>
-<rect x="1112.7" y="82" width="2.7" height="9" rx="3" fill="#f1e05a"/>
-<rect x="1115.5" y="82" width="2.4" height="9" rx="3" fill="#663399"/>
-<rect x="1117.9" y="82" width="2.3" height="9" rx="3" fill="#e34c26"/>
-<rect x="1120.2" y="82" width="2.0" height="9" rx="3" fill="#3572A5"/>
-<rect x="1122.2" y="82" width="2.0" height="9" rx="3" fill="#384d54"/>
+<rect x="852.0" y="82" width="252.5" height="9" rx="3" fill="#DA5B0B"/>
+<rect x="1104.5" y="82" width="4.7" height="9" rx="3" fill="#b07219"/>
+<rect x="1109.3" y="82" width="4.3" height="9" rx="3" fill="#e34c26"/>
+<rect x="1113.5" y="82" width="3.4" height="9" rx="3" fill="#663399"/>
+<rect x="1116.9" y="82" width="3.1" height="9" rx="3" fill="#f1e05a"/>
+<rect x="1120.0" y="82" width="2.0" height="9" rx="3" fill="#3572A5"/>
+<rect x="1122.0" y="82" width="2.0" height="9" rx="3" fill="#384d54"/>
 <circle cx="858" cy="119" r="6" fill="#DA5B0B"/>
-<text x="872" y="123" fill="#c9d1d9" font-size="13">Jupyter Notebook 94.79%</text>
+<text x="872" y="123" fill="#c9d1d9" font-size="13">Jupyter Notebook 93.52%</text>
 <circle cx="1043" cy="119" r="6" fill="#b07219"/>
-<text x="1057" y="123" fill="#c9d1d9" font-size="13">Java 1.78%</text>
-<circle cx="858" cy="148" r="6" fill="#f1e05a"/>
-<text x="872" y="152" fill="#c9d1d9" font-size="13">JavaScript 1.01%</text>
+<text x="1057" y="123" fill="#c9d1d9" font-size="13">Java 1.76%</text>
+<circle cx="858" cy="148" r="6" fill="#e34c26"/>
+<text x="872" y="152" fill="#c9d1d9" font-size="13">HTML 1.58%</text>
 <circle cx="1043" cy="148" r="6" fill="#663399"/>
-<text x="1057" y="152" fill="#c9d1d9" font-size="13">CSS 0.90%</text>
-<circle cx="858" cy="177" r="6" fill="#e34c26"/>
-<text x="872" y="181" fill="#c9d1d9" font-size="13">HTML 0.84%</text>
+<text x="1057" y="152" fill="#c9d1d9" font-size="13">CSS 1.26%</text>
+<circle cx="858" cy="177" r="6" fill="#f1e05a"/>
+<text x="872" y="181" fill="#c9d1d9" font-size="13">JavaScript 1.14%</text>
 <circle cx="1043" cy="177" r="6" fill="#3572A5"/>
-<text x="1057" y="181" fill="#c9d1d9" font-size="13">Python 0.67%</text>
+<text x="1057" y="181" fill="#c9d1d9" font-size="13">Python 0.73%</text>
 <circle cx="858" cy="206" r="6" fill="#384d54"/>
 <text x="872" y="210" fill="#c9d1d9" font-size="13">Dockerfile 0.01%</text>
 <line x1="40" y1="285" x2="1320" y2="285" stroke="#30363d"/>
@@ -73,13 +73,13 @@
 <line x1="780" y1="498.0" x2="1305" y2="498.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
 <text x="768" y="501.0" text-anchor="end" class="axis">4</text>
 <line x1="780" y1="469.0" x2="1305" y2="469.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="768" y="472.0" text-anchor="end" class="axis">7</text>
+<text x="768" y="472.0" text-anchor="end" class="axis">8</text>
 <line x1="780" y1="440.0" x2="1305" y2="440.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
 <text x="768" y="443.0" text-anchor="end" class="axis">11</text>
 <line x1="780" y1="411.0" x2="1305" y2="411.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="768" y="414.0" text-anchor="end" class="axis">14</text>
+<text x="768" y="414.0" text-anchor="end" class="axis">15</text>
 <line x1="780" y1="382.0" x2="1305" y2="382.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="768" y="385.0" text-anchor="end" class="axis">18</text>
+<text x="768" y="385.0" text-anchor="end" class="axis">19</text>
 <text x="780.0" y="549" text-anchor="middle" class="axis">26</text>
 <text x="867.5" y="549" text-anchor="middle" class="axis">31</text>
 <text x="955.0" y="549" text-anchor="middle" class="axis">05</text>
@@ -87,36 +87,36 @@
 <text x="1130.0" y="549" text-anchor="middle" class="axis">15</text>
 <text x="1217.5" y="549" text-anchor="middle" class="axis">20</text>
 <text x="1305.0" y="549" text-anchor="middle" class="axis">25</text>
-<polyline points="780.0,527.0 797.5,502.8 815.0,470.6 832.5,470.6 850.0,478.7 867.5,486.7 885.0,527.0 902.5,510.9 920.0,527.0 937.5,494.8 955.0,518.9 972.5,510.9 990.0,518.9 1007.5,527.0 1025.0,470.6 1042.5,510.9 1060.0,502.8 1077.5,478.7 1095.0,446.4 1112.5,502.8 1130.0,510.9 1147.5,518.9 1165.0,502.8 1182.5,494.8 1200.0,527.0 1217.5,502.8 1235.0,382.0 1252.5,510.9 1270.0,518.9 1287.5,527.0 1305.0,470.6" fill="none" stroke="#2f81f7" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="780.0,527.0 797.5,504.1 815.0,473.6 832.5,481.2 850.0,473.6 867.5,488.8 885.0,527.0 902.5,511.7 920.0,527.0 937.5,496.5 955.0,519.4 972.5,511.7 990.0,519.4 1007.5,527.0 1025.0,473.6 1042.5,511.7 1060.0,504.1 1077.5,481.2 1095.0,450.7 1112.5,504.1 1130.0,511.7 1147.5,519.4 1165.0,504.1 1182.5,496.5 1200.0,527.0 1217.5,511.7 1235.0,382.0 1252.5,511.7 1270.0,519.4 1287.5,527.0 1305.0,473.6" fill="none" stroke="#2f81f7" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
 <circle cx="780.0" cy="527.0" r="3.3" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="797.5" cy="502.8" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="815.0" cy="470.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="832.5" cy="470.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="850.0" cy="478.7" r="3.3" fill="#f0f6fc"><title>6 contributions</title></circle>
-<circle cx="867.5" cy="486.7" r="3.3" fill="#f0f6fc"><title>5 contributions</title></circle>
+<circle cx="797.5" cy="504.1" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
+<circle cx="815.0" cy="473.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
+<circle cx="832.5" cy="481.2" r="3.3" fill="#f0f6fc"><title>6 contributions</title></circle>
+<circle cx="850.0" cy="473.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
+<circle cx="867.5" cy="488.8" r="3.3" fill="#f0f6fc"><title>5 contributions</title></circle>
 <circle cx="885.0" cy="527.0" r="3.3" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="902.5" cy="510.9" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="902.5" cy="511.7" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
 <circle cx="920.0" cy="527.0" r="3.3" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="937.5" cy="494.8" r="3.3" fill="#f0f6fc"><title>4 contributions</title></circle>
-<circle cx="955.0" cy="518.9" r="3.3" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="972.5" cy="510.9" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="990.0" cy="518.9" r="3.3" fill="#f0f6fc"><title>1 contributions</title></circle>
+<circle cx="937.5" cy="496.5" r="3.3" fill="#f0f6fc"><title>4 contributions</title></circle>
+<circle cx="955.0" cy="519.4" r="3.3" fill="#f0f6fc"><title>1 contributions</title></circle>
+<circle cx="972.5" cy="511.7" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="990.0" cy="519.4" r="3.3" fill="#f0f6fc"><title>1 contributions</title></circle>
 <circle cx="1007.5" cy="527.0" r="3.3" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="1025.0" cy="470.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="1042.5" cy="510.9" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1060.0" cy="502.8" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1077.5" cy="478.7" r="3.3" fill="#f0f6fc"><title>6 contributions</title></circle>
-<circle cx="1095.0" cy="446.4" r="3.3" fill="#f0f6fc"><title>10 contributions</title></circle>
-<circle cx="1112.5" cy="502.8" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1130.0" cy="510.9" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1147.5" cy="518.9" r="3.3" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="1165.0" cy="502.8" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1182.5" cy="494.8" r="3.3" fill="#f0f6fc"><title>4 contributions</title></circle>
+<circle cx="1025.0" cy="473.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
+<circle cx="1042.5" cy="511.7" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="1060.0" cy="504.1" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
+<circle cx="1077.5" cy="481.2" r="3.3" fill="#f0f6fc"><title>6 contributions</title></circle>
+<circle cx="1095.0" cy="450.7" r="3.3" fill="#f0f6fc"><title>10 contributions</title></circle>
+<circle cx="1112.5" cy="504.1" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
+<circle cx="1130.0" cy="511.7" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="1147.5" cy="519.4" r="3.3" fill="#f0f6fc"><title>1 contributions</title></circle>
+<circle cx="1165.0" cy="504.1" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
+<circle cx="1182.5" cy="496.5" r="3.3" fill="#f0f6fc"><title>4 contributions</title></circle>
 <circle cx="1200.0" cy="527.0" r="3.3" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="1217.5" cy="502.8" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1235.0" cy="382.0" r="3.3" fill="#f0f6fc"><title>18 contributions</title></circle>
-<circle cx="1252.5" cy="510.9" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1270.0" cy="518.9" r="3.3" fill="#f0f6fc"><title>1 contributions</title></circle>
+<circle cx="1217.5" cy="511.7" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="1235.0" cy="382.0" r="3.3" fill="#f0f6fc"><title>19 contributions</title></circle>
+<circle cx="1252.5" cy="511.7" r="3.3" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="1270.0" cy="519.4" r="3.3" fill="#f0f6fc"><title>1 contributions</title></circle>
 <circle cx="1287.5" cy="527.0" r="3.3" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="1305.0" cy="470.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
+<circle cx="1305.0" cy="473.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
 </svg>
