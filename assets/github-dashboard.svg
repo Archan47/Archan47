@@ -71,7 +71,7 @@ and recent contribution activity.
 <text x="590" y="92" class="value">3</text>
 <text x="350" y="120" fill="#2f81f7" font-size="18">↻</text>
 <text x="378" y="120" class="label">Commits (last year):</text>
-<text x="590" y="120" class="value">367</text>
+<text x="590" y="120" class="value">370</text>
 <text x="350" y="148" fill="#2f81f7" font-size="18">⑂</text>
 <text x="378" y="148" class="label">Pull Requests (last year):</text>
 <text x="590" y="148" class="value">4</text>
@@ -85,31 +85,31 @@ and recent contribution activity.
 <path d="M700 83 A43 43 0 0 1 738 105" fill="none" stroke="#2f81f7" stroke-width="8" stroke-linecap="round"/>
 <text x="700" y="134" text-anchor="middle" fill="#c9d1d9" font-size="22" font-weight="700">GH</text>
 <text x="852" y="56" class="title">Most Used Languages</text>
-<rect x="852.0" y="82" width="252.4" height="9" rx="3" fill="#DA5B0B"/>
-<rect x="1104.4" y="82" width="4.7" height="9" rx="3" fill="#b07219"/>
-<rect x="1109.1" y="82" width="4.3" height="9" rx="3" fill="#e34c26"/>
-<rect x="1113.4" y="82" width="3.4" height="9" rx="3" fill="#663399"/>
-<rect x="1116.8" y="82" width="3.1" height="9" rx="3" fill="#f1e05a"/>
-<rect x="1119.9" y="82" width="2.1" height="9" rx="3" fill="#3572A5"/>
+<rect x="852.0" y="82" width="251.1" height="9" rx="3" fill="#DA5B0B"/>
+<rect x="1103.1" y="82" width="4.7" height="9" rx="3" fill="#b07219"/>
+<rect x="1107.9" y="82" width="4.2" height="9" rx="3" fill="#e34c26"/>
+<rect x="1112.1" y="82" width="3.4" height="9" rx="3" fill="#3572A5"/>
+<rect x="1115.5" y="82" width="3.4" height="9" rx="3" fill="#663399"/>
+<rect x="1118.9" y="82" width="3.1" height="9" rx="3" fill="#f1e05a"/>
 <rect x="1122.0" y="82" width="2.0" height="9" rx="3" fill="#384d54"/>
 <circle cx="858" cy="119" r="6" fill="#DA5B0B"/>
-<text x="872" y="123" fill="#c9d1d9" font-size="13">Jupyter Notebook 93.48%</text>
+<text x="872" y="123" fill="#c9d1d9" font-size="13">Jupyter Notebook 93.01%</text>
 <circle cx="1043" cy="119" r="6" fill="#b07219"/>
 <text x="1057" y="123" fill="#c9d1d9" font-size="13">Java 1.75%</text>
 <circle cx="858" cy="148" r="6" fill="#e34c26"/>
-<text x="872" y="152" fill="#c9d1d9" font-size="13">HTML 1.58%</text>
-<circle cx="1043" cy="148" r="6" fill="#663399"/>
-<text x="1057" y="152" fill="#c9d1d9" font-size="13">CSS 1.26%</text>
-<circle cx="858" cy="177" r="6" fill="#f1e05a"/>
-<text x="872" y="181" fill="#c9d1d9" font-size="13">JavaScript 1.14%</text>
-<circle cx="1043" cy="177" r="6" fill="#3572A5"/>
-<text x="1057" y="181" fill="#c9d1d9" font-size="13">Python 0.78%</text>
+<text x="872" y="152" fill="#c9d1d9" font-size="13">HTML 1.57%</text>
+<circle cx="1043" cy="148" r="6" fill="#3572A5"/>
+<text x="1057" y="152" fill="#c9d1d9" font-size="13">Python 1.27%</text>
+<circle cx="858" cy="177" r="6" fill="#663399"/>
+<text x="872" y="181" fill="#c9d1d9" font-size="13">CSS 1.25%</text>
+<circle cx="1043" cy="177" r="6" fill="#f1e05a"/>
+<text x="1057" y="181" fill="#c9d1d9" font-size="13">JavaScript 1.14%</text>
 <circle cx="858" cy="206" r="6" fill="#384d54"/>
 <text x="872" y="210" fill="#c9d1d9" font-size="13">Dockerfile 0.01%</text>
 <line x1="40" y1="285" x2="1320" y2="285" stroke="#30363d"/>
 <line x1="325" y1="340" x2="325" y2="520" stroke="#39d353" stroke-width="1"/>
 <line x1="545" y1="340" x2="545" y2="520" stroke="#39d353" stroke-width="1"/>
-<text x="215" y="400" text-anchor="middle" class="big">393</text>
+<text x="215" y="400" text-anchor="middle" class="big">396</text>
 <text x="215" y="446" text-anchor="middle" fill="#f0f6fc" font-size="17">Total Contributions</text>
 <text x="215" y="484" text-anchor="middle" class="small">Aug 27, 2025 – Present</text>
 <circle cx="435" cy="396" r="48" fill="none" stroke="#19324f" stroke-width="8"/>
@@ -140,7 +140,7 @@ and recent contribution activity.
 <text x="1130.0" y="549" text-anchor="middle" class="axis">16</text>
 <text x="1217.5" y="549" text-anchor="middle" class="axis">21</text>
 <text x="1305.0" y="549" text-anchor="middle" class="axis">26</text>
-<polyline points="780.0,504.1 797.5,473.6 815.0,481.2 832.5,473.6 850.0,488.8 867.5,527.0 885.0,511.7 902.5,527.0 920.0,496.5 937.5,519.4 955.0,511.7 972.5,519.4 990.0,527.0 1007.5,473.6 1025.0,511.7 1042.5,504.1 1060.0,481.2 1077.5,450.7 1095.0,504.1 1112.5,511.7 1130.0,519.4 1147.5,504.1 1165.0,496.5 1182.5,527.0 1200.0,511.7 1217.5,382.0 1235.0,511.7 1252.5,519.4 1270.0,527.0 1287.5,473.6 1305.0,504.1" fill="none" stroke="#2f81f7" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="780.0,504.1 797.5,473.6 815.0,481.2 832.5,473.6 850.0,488.8 867.5,527.0 885.0,511.7 902.5,527.0 920.0,496.5 937.5,519.4 955.0,511.7 972.5,519.4 990.0,527.0 1007.5,473.6 1025.0,511.7 1042.5,504.1 1060.0,481.2 1077.5,450.7 1095.0,504.1 1112.5,511.7 1130.0,519.4 1147.5,504.1 1165.0,496.5 1182.5,527.0 1200.0,511.7 1217.5,382.0 1235.0,511.7 1252.5,519.4 1270.0,527.0 1287.5,473.6 1305.0,481.2" fill="none" stroke="#2f81f7" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
 <circle cx="780.0" cy="504.1" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
 <circle cx="797.5" cy="473.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
 <circle cx="815.0" cy="481.2" r="3.3" fill="#f0f6fc"><title>6 contributions</title></circle>
@@ -171,5 +171,5 @@ and recent contribution activity.
 <circle cx="1252.5" cy="519.4" r="3.3" fill="#f0f6fc"><title>1 contributions</title></circle>
 <circle cx="1270.0" cy="527.0" r="3.3" fill="#f0f6fc"><title>0 contributions</title></circle>
 <circle cx="1287.5" cy="473.6" r="3.3" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="1305.0" cy="504.1" r="3.3" fill="#f0f6fc"><title>3 contributions</title></circle>
+<circle cx="1305.0" cy="481.2" r="3.3" fill="#f0f6fc"><title>6 contributions</title></circle>
 </svg>
