@@ -3,6 +3,7 @@
 import os
 import json
 import html
+import math
 import urllib.request
 from datetime import datetime, timedelta, time, timezone
 from zoneinfo import ZoneInfo
@@ -38,6 +39,7 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
     contributionsCollection(from: $from, to: $to) {
       totalCommitContributions
       totalPullRequestContributions
+      totalPullRequestReviewContributions
       totalIssueContributions
       totalRepositoriesWithContributedCommits
       restrictedContributionsCount
@@ -234,6 +236,10 @@ pull_requests = int(
     contrib["totalPullRequestContributions"]
 )
 
+reviews = int(
+    contrib["totalPullRequestReviewContributions"]
+)
+
 issues = int(
     contrib["totalIssueContributions"]
 )
@@ -241,6 +247,16 @@ issues = int(
 repos_contributed = int(
     contrib["totalRepositoriesWithContributedCommits"]
 )
+
+# Dynamic activity overview: commits, code reviews, issues and pull requests.
+activity_total = commits + reviews + issues + pull_requests
+if activity_total <= 0:
+    activity_total = 1
+
+commit_pct = commits / activity_total * 100
+review_pct = reviews / activity_total * 100
+issue_pct = issues / activity_total * 100
+pr_pct = pull_requests / activity_total * 100
 
 last_days = days[-31:]
 
@@ -334,7 +350,7 @@ aria-labelledby="title desc">
 <title id="title">{esc(profile_name)} GitHub dashboard</title>
 
 <desc id="desc">
-GitHub statistics, languages, contribution streaks,
+GitHub statistics, activity overview, contribution streaks,
 and recent contribution activity.
 </desc>
 
@@ -403,11 +419,12 @@ stats = [
     ("★", "Total Stars Earned:", stars),
     ("↻", "Commits (last year):", commits),
     ("⑂", "Pull Requests (last year):", pull_requests),
+    ("◌", "Reviews (last year):", reviews),
     ("!", "Issues (last year):", issues),
     ("▣", "Repos contributed to:", repos_contributed),
 ]
 
-stats_y = 92
+stats_y = 84
 
 for icon, label, value in stats:
     svg.append(
@@ -429,7 +446,7 @@ for icon, label, value in stats:
         f'</text>'
     )
 
-    stats_y += 28
+    stats_y += 25
 
 svg.append(
     '<circle cx="700" cy="126" r="43" '
@@ -449,81 +466,108 @@ svg.append(
     f'</text>'
 )
 
+# ------------------------------------------------------------
+# TOP RIGHT — DYNAMIC ACTIVITY OVERVIEW
+# ------------------------------------------------------------
+radar_cx = 1015
+radar_cy = 150
+radar_radius = 88
+
+# Axes match GitHub's activity overview style:
+# left = commits, top = code review, right = issues, bottom = pull requests.
+activity_axes = [
+    ("Commits", commit_pct, 180),
+    ("Code review", review_pct, -90),
+    ("Issues", issue_pct, 0),
+    ("Pull requests", pr_pct, 90),
+]
+
+radar_points = []
+for _, percentage, angle_deg in activity_axes:
+    # sqrt scaling keeps small categories visible while preserving ranking.
+    scaled = math.sqrt(max(0.0, min(percentage, 100.0)) / 100.0)
+    radius = radar_radius * scaled
+    angle = math.radians(angle_deg)
+    x = radar_cx + math.cos(angle) * radius
+    y = radar_cy + math.sin(angle) * radius
+    radar_points.append(f"{x:.1f},{y:.1f}")
+
 svg.append(
-    '<text x="852" y="56" class="title">'
-    'Most Used Languages'
+    '<text x="1015" y="44" text-anchor="middle" class="title">'
+    'Activity Overview'
     '</text>'
 )
 
-language_bar_x = 852
-language_bar_y = 82
-language_bar_width = 270
-language_cursor_x = language_bar_x
+# Cross axes.
+svg.append(
+    f'<line x1="{radar_cx-radar_radius}" y1="{radar_cy}" '
+    f'x2="{radar_cx+radar_radius}" y2="{radar_cy}" '
+    f'stroke="{GREEN}" stroke-width="2"/>'
+)
+svg.append(
+    f'<line x1="{radar_cx}" y1="{radar_cy-radar_radius}" '
+    f'x2="{radar_cx}" y2="{radar_cy+radar_radius}" '
+    f'stroke="{GREEN}" stroke-width="2"/>'
+)
 
-for language_name, size in top_languages:
-    percentage = size / total_language_bytes
+# Filled activity shape.
+svg.append(
+    f'<polygon points="{" ".join(radar_points)}" '
+    f'fill="#238636" fill-opacity="0.55" '
+    f'stroke="{GREEN}" stroke-width="2"/>'
+)
 
-    segment_width = max(
-        2,
-        language_bar_width * percentage,
-    )
-
-    color = language_colors.get(
-        language_name,
-        BLUE,
-    )
-
+# Center + data points.
+svg.append(
+    f'<circle cx="{radar_cx}" cy="{radar_cy}" r="4" '
+    f'fill="{TEXT}" stroke="{GREEN}" stroke-width="2"/>'
+)
+for point in radar_points:
+    px, py = point.split(",")
     svg.append(
-        f'<rect x="{language_cursor_x:.1f}" '
-        f'y="{language_bar_y}" '
-        f'width="{segment_width:.1f}" '
-        f'height="9" rx="3" '
-        f'fill="{color}"/>'
+        f'<circle cx="{px}" cy="{py}" r="4.5" '
+        f'fill="{TEXT}" stroke="{GREEN}" stroke-width="2"/>'
     )
 
-    language_cursor_x += segment_width
+# Labels and percentages.
+svg.append(
+    f'<text x="{radar_cx-radar_radius-18}" y="{radar_cy-8}" '
+    f'text-anchor="end" fill="{MUTED}" font-size="13">'
+    f'{commit_pct:.0f}%</text>'
+)
+svg.append(
+    f'<text x="{radar_cx-radar_radius-18}" y="{radar_cy+13}" '
+    f'text-anchor="end" fill="{MUTED}" font-size="14">Commits</text>'
+)
 
-fallback_colors = [
-    "#e34c26",
-    "#f1e05a",
-    "#3572A5",
-    "#563d7c",
-    "#DA5B0B",
-    "#89e051",
-    "#00ADD8",
-]
+svg.append(
+    f'<text x="{radar_cx}" y="{radar_cy-radar_radius-25}" '
+    f'text-anchor="middle" fill="{MUTED}" font-size="13">'
+    f'{review_pct:.0f}%</text>'
+)
+svg.append(
+    f'<text x="{radar_cx}" y="{radar_cy-radar_radius-6}" '
+    f'text-anchor="middle" fill="{MUTED}" font-size="14">Code review</text>'
+)
 
-for index, (language_name, size) in enumerate(top_languages):
-    column = index % 2
-    row = index // 2
+svg.append(
+    f'<text x="{radar_cx+radar_radius+18}" y="{radar_cy-8}" '
+    f'fill="{MUTED}" font-size="13">{issue_pct:.0f}%</text>'
+)
+svg.append(
+    f'<text x="{radar_cx+radar_radius+18}" y="{radar_cy+13}" '
+    f'fill="{MUTED}" font-size="14">Issues</text>'
+)
 
-    x = 852 + column * 185
-    y = 123 + row * 29
-
-    color = language_colors.get(
-        language_name,
-        fallback_colors[
-            index % len(fallback_colors)
-        ],
-    )
-
-    percentage = (
-        size
-        / total_language_bytes
-        * 100
-    )
-
-    svg.append(
-        f'<circle cx="{x + 6}" cy="{y - 4}" '
-        f'r="6" fill="{color}"/>'
-    )
-
-    svg.append(
-        f'<text x="{x + 20}" y="{y}" '
-        f'fill="{MUTED}" font-size="13">'
-        f'{esc(language_name)} {percentage:.2f}%'
-        f'</text>'
-    )
+svg.append(
+    f'<text x="{radar_cx}" y="{radar_cy+radar_radius+22}" '
+    f'text-anchor="middle" fill="{MUTED}" font-size="14">Pull requests</text>'
+)
+svg.append(
+    f'<text x="{radar_cx}" y="{radar_cy+radar_radius+42}" '
+    f'text-anchor="middle" fill="{MUTED}" font-size="13">'
+    f'{pr_pct:.0f}%</text>'
+)
 
 svg.append(
     f'<line x1="40" y1="285" x2="1320" y2="285" '
@@ -761,3 +805,10 @@ print(
     f"{restricted_contributions}"
 )
 print(f"Current streak: {current_streak}")
+print(
+    "Activity percentages: "
+    f"commits={commit_pct:.1f}%, "
+    f"reviews={review_pct:.1f}%, "
+    f"issues={issue_pct:.1f}%, "
+    f"pull_requests={pr_pct:.1f}%"
+)
