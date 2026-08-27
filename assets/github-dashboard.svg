@@ -115,7 +115,7 @@ aria-labelledby="title desc">
 <line x1="590" y1="372" x2="590" y2="548" stroke="#39d353" stroke-width="1.2"/>
 <text x="230" y="420" text-anchor="middle" class="big">405</text>
 <text x="230" y="485" text-anchor="middle" class="metric-title">Total Contributions</text>
-<text x="230" y="525" text-anchor="middle" class="small">Aug 28, 2025 – Present</text>
+<text x="230" y="525" text-anchor="middle" class="small">Aug 29, 2025 – Present</text>
 <circle cx="470" cy="416" r="50" fill="none" stroke="#19324f" stroke-width="9"/>
 <circle cx="470" cy="416" r="50" fill="none" stroke="#2f81f7" stroke-width="9" stroke-linecap="round" stroke-dasharray="90 330" transform="rotate(-90 470 416)"/>
 <text x="470" y="429" text-anchor="middle" class="big">3</text>
@@ -137,43 +137,43 @@ aria-labelledby="title desc">
 <text x="771" y="449.0" text-anchor="end" class="axis">15</text>
 <line x1="785" y1="410.0" x2="1340" y2="410.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
 <text x="771" y="413.0" text-anchor="end" class="axis">19</text>
-<text x="785.0" y="614" text-anchor="middle" class="axis">28</text>
-<text x="877.5" y="614" text-anchor="middle" class="axis">02</text>
-<text x="970.0" y="614" text-anchor="middle" class="axis">07</text>
-<text x="1062.5" y="614" text-anchor="middle" class="axis">12</text>
-<text x="1155.0" y="614" text-anchor="middle" class="axis">17</text>
-<text x="1247.5" y="614" text-anchor="middle" class="axis">22</text>
-<text x="1340.0" y="614" text-anchor="middle" class="axis">27</text>
-<polyline points="785.0,523.7 803.5,533.2 822.0,523.7 840.5,542.6 859.0,590.0 877.5,571.1 896.0,590.0 914.5,552.1 933.0,580.5 951.5,571.1 970.0,580.5 988.5,590.0 1007.0,523.7 1025.5,571.1 1044.0,561.6 1062.5,533.2 1081.0,495.3 1099.5,561.6 1118.0,571.1 1136.5,580.5 1155.0,561.6 1173.5,552.1 1192.0,590.0 1210.5,571.1 1229.0,410.0 1247.5,571.1 1266.0,580.5 1284.5,590.0 1303.0,523.7 1321.5,495.3 1340.0,542.6" fill="none" stroke="#2f81f7" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="785.0" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="803.5" cy="533.2" r="3.5" fill="#f0f6fc"><title>6 contributions</title></circle>
-<circle cx="822.0" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="840.5" cy="542.6" r="3.5" fill="#f0f6fc"><title>5 contributions</title></circle>
-<circle cx="859.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="877.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="896.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="914.5" cy="552.1" r="3.5" fill="#f0f6fc"><title>4 contributions</title></circle>
-<circle cx="933.0" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="951.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="970.0" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="988.5" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="1007.0" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="1025.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1044.0" cy="561.6" r="3.5" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1062.5" cy="533.2" r="3.5" fill="#f0f6fc"><title>6 contributions</title></circle>
-<circle cx="1081.0" cy="495.3" r="3.5" fill="#f0f6fc"><title>10 contributions</title></circle>
-<circle cx="1099.5" cy="561.6" r="3.5" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1118.0" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1136.5" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="1155.0" cy="561.6" r="3.5" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1173.5" cy="552.1" r="3.5" fill="#f0f6fc"><title>4 contributions</title></circle>
-<circle cx="1192.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="1210.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1229.0" cy="410.0" r="3.5" fill="#f0f6fc"><title>19 contributions</title></circle>
-<circle cx="1247.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1266.0" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="1284.5" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="1303.0" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="1321.5" cy="495.3" r="3.5" fill="#f0f6fc"><title>10 contributions</title></circle>
-<circle cx="1340.0" cy="542.6" r="3.5" fill="#f0f6fc"><title>5 contributions</title></circle>
+<text x="785.0" y="614" text-anchor="middle" class="axis">29</text>
+<text x="877.5" y="614" text-anchor="middle" class="axis">03</text>
+<text x="970.0" y="614" text-anchor="middle" class="axis">08</text>
+<text x="1062.5" y="614" text-anchor="middle" class="axis">13</text>
+<text x="1155.0" y="614" text-anchor="middle" class="axis">18</text>
+<text x="1247.5" y="614" text-anchor="middle" class="axis">23</text>
+<text x="1340.0" y="614" text-anchor="middle" class="axis">28</text>
+<polyline points="785.0,533.2 803.5,523.7 822.0,542.6 840.5,590.0 859.0,571.1 877.5,590.0 896.0,552.1 914.5,580.5 933.0,571.1 951.5,580.5 970.0,590.0 988.5,523.7 1007.0,571.1 1025.5,561.6 1044.0,533.2 1062.5,495.3 1081.0,561.6 1099.5,571.1 1118.0,580.5 1136.5,561.6 1155.0,552.1 1173.5,590.0 1192.0,571.1 1210.5,410.0 1229.0,571.1 1247.5,580.5 1266.0,590.0 1284.5,523.7 1303.0,495.3 1321.5,542.6 1340.0,590.0" fill="none" stroke="#2f81f7" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="785.0" cy="533.2" r="3.5" fill="#f0f6fc"><title>6 contributions</title></circle>
+<circle cx="803.5" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
+<circle cx="822.0" cy="542.6" r="3.5" fill="#f0f6fc"><title>5 contributions</title></circle>
+<circle cx="840.5" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
+<circle cx="859.0" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="877.5" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
+<circle cx="896.0" cy="552.1" r="3.5" fill="#f0f6fc"><title>4 contributions</title></circle>
+<circle cx="914.5" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
+<circle cx="933.0" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="951.5" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
+<circle cx="970.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
+<circle cx="988.5" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
+<circle cx="1007.0" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="1025.5" cy="561.6" r="3.5" fill="#f0f6fc"><title>3 contributions</title></circle>
+<circle cx="1044.0" cy="533.2" r="3.5" fill="#f0f6fc"><title>6 contributions</title></circle>
+<circle cx="1062.5" cy="495.3" r="3.5" fill="#f0f6fc"><title>10 contributions</title></circle>
+<circle cx="1081.0" cy="561.6" r="3.5" fill="#f0f6fc"><title>3 contributions</title></circle>
+<circle cx="1099.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="1118.0" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
+<circle cx="1136.5" cy="561.6" r="3.5" fill="#f0f6fc"><title>3 contributions</title></circle>
+<circle cx="1155.0" cy="552.1" r="3.5" fill="#f0f6fc"><title>4 contributions</title></circle>
+<circle cx="1173.5" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
+<circle cx="1192.0" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="1210.5" cy="410.0" r="3.5" fill="#f0f6fc"><title>19 contributions</title></circle>
+<circle cx="1229.0" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
+<circle cx="1247.5" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
+<circle cx="1266.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
+<circle cx="1284.5" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
+<circle cx="1303.0" cy="495.3" r="3.5" fill="#f0f6fc"><title>10 contributions</title></circle>
+<circle cx="1321.5" cy="542.6" r="3.5" fill="#f0f6fc"><title>5 contributions</title></circle>
+<circle cx="1340.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
 </svg>
