@@ -2,6 +2,14 @@ name: Update profile dashboard
 
 on:
   workflow_dispatch:
+
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/generate_dashboard.py"
+      - ".github/workflows/profile-dashboard.yml"
+
   schedule:
     - cron: "17 */6 * * *"
 
@@ -26,10 +34,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add assets/github-dashboard.svg
+
           if git diff --cached --quiet; then
             echo "Dashboard is already up to date."
             exit 0
           fi
+
           git commit -m "chore: update profile dashboard"
           git push
