@@ -1,179 +1,771 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-width="1400"
-height="720"
-viewBox="0 0 1400 720"
-role="img"
-aria-labelledby="title desc">
 
-<title id="title">Archan Kundu Chowdhury GitHub dashboard</title>
-<desc id="desc">GitHub statistics, activity overview, contribution streaks, and recent contribution activity.</desc>
+<svg
+xmlns="http://www.w3.org/2000/svg"
+width="1200"
+height="360"
+viewBox="0 0 1200 360"
+>
 
-<rect width="100%" height="100%" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+<rect
+width="100%"
+height="100%"
+rx="12"
+fill="#0d1117"
+stroke="#30363d"
+stroke-width="2"
+/>
 
 <style>
-  text {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
 
-  .title {
-    fill: #2f81f7;
-    font-size: 22px;
-    font-weight: 700;
-  }
+text {
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+sans-serif;
+}
 
-  .label {
-    fill: #c9d1d9;
-    font-size: 16px;
-    font-weight: 600;
-  }
+.big {
+fill:#f0f6fc;
+font-size:36px;
+font-weight:700;
+}
 
-  .value {
-    fill: #f0f6fc;
-    font-size: 17px;
-    font-weight: 700;
-  }
+.label {
+fill:#f0f6fc;
+font-size:15px;
+font-weight:600;
+}
 
-  .big {
-    fill: #f0f6fc;
-    font-size: 44px;
-    font-weight: 700;
-  }
+.date {
+fill:#39d353;
+font-size:11px;
+}
 
-  .metric-title {
-    fill: #f0f6fc;
-    font-size: 19px;
-    font-weight: 700;
-  }
+.title {
+fill:#2f81f7;
+font-size:17px;
+font-weight:600;
+}
 
-  .small {
-    fill: #39d353;
-    font-size: 14px;
-    font-weight: 600;
-  }
+.axis {
+fill:#2f81f7;
+font-size:8px;
+}
 
-  .axis {
-    fill: #2f81f7;
-    font-size: 10px;
-  }
-
-  .radar-label {
-    fill: #c9d1d9;
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  .radar-pct {
-    fill: #f0f6fc;
-    font-size: 15px;
-    font-weight: 700;
-  }
 </style>
 
-<rect x="55" y="35" width="620" height="240" rx="12" fill="#0a1523" opacity="0.22"/>
-<rect x="725" y="35" width="620" height="240" rx="12" fill="#0a1523" opacity="0.22"/>
-<text x="310" y="62" class="title">Archan Kundu Chowdhury&#39;s GitHub Stats</text>
-<text x="305" y="98" fill="#2f81f7" font-size="18">★</text>
-<text x="333" y="98" class="label">Total Stars Earned:</text>
-<text x="565" y="98" class="value">3</text>
-<text x="305" y="127" fill="#2f81f7" font-size="18">↻</text>
-<text x="333" y="127" class="label">Commits (last year):</text>
-<text x="565" y="127" class="value">384</text>
-<text x="305" y="156" fill="#2f81f7" font-size="18">⑂</text>
-<text x="333" y="156" class="label">Pull Requests (last year):</text>
-<text x="565" y="156" class="value">6</text>
-<text x="305" y="185" fill="#2f81f7" font-size="18">◌</text>
-<text x="333" y="185" class="label">Reviews (last year):</text>
-<text x="565" y="185" class="value">0</text>
-<text x="305" y="214" fill="#2f81f7" font-size="18">!</text>
-<text x="333" y="214" class="label">Issues (last year):</text>
-<text x="565" y="214" class="value">1</text>
-<text x="305" y="243" fill="#2f81f7" font-size="18">▣</text>
-<text x="333" y="243" class="label">Repos contributed to:</text>
-<text x="565" y="243" class="value">27</text>
-<circle cx="700" cy="148" r="46" fill="none" stroke="#19324f" stroke-width="9"/>
-<path d="M700 102 A46 46 0 0 1 739 128" fill="none" stroke="#2f81f7" stroke-width="9" stroke-linecap="round"/>
-<text x="700" y="156" text-anchor="middle" fill="#c9d1d9" font-size="22" font-weight="700">GH</text>
-<text x="1115" y="62" text-anchor="middle" class="title">Activity Overview</text>
-<line x1="995" y1="175" x2="1235" y2="175" stroke="#39d353" stroke-width="2.2"/>
-<line x1="1115" y1="55" x2="1115" y2="295" stroke="#39d353" stroke-width="2.2"/>
-<polygon points="996.1,175.0 1115.0,175.0 1121.1,175.0 1115.0,189.9" fill="#238636" fill-opacity="0.55" stroke="#39d353" stroke-width="2.4"/>
-<circle cx="1115" cy="175" r="4" fill="#f0f6fc" stroke="#39d353" stroke-width="2"/>
-<circle cx="996.1" cy="175.0" r="5" fill="#f0f6fc" stroke="#39d353" stroke-width="2"/>
-<circle cx="1115.0" cy="175.0" r="5" fill="#f0f6fc" stroke="#39d353" stroke-width="2"/>
-<circle cx="1121.1" cy="175.0" r="5" fill="#f0f6fc" stroke="#39d353" stroke-width="2"/>
-<circle cx="1115.0" cy="189.9" r="5" fill="#f0f6fc" stroke="#39d353" stroke-width="2"/>
-<text x="965" y="167" text-anchor="end" class="radar-pct">98%</text>
-<text x="965" y="190" text-anchor="end" class="radar-label">Commits</text>
-<text x="1115" y="37" text-anchor="middle" class="radar-pct">0%</text>
-<text x="1115" y="61" text-anchor="middle" class="radar-label">Code review</text>
-<text x="1265" y="167" class="radar-pct">0%</text>
-<text x="1265" y="190" class="radar-label">Issues</text>
-<text x="1115" y="323" text-anchor="middle" class="radar-label">Pull requests</text>
-<text x="1115" y="347" text-anchor="middle" class="radar-pct">2%</text>
-<line x1="50" y1="322" x2="1350" y2="322" stroke="#30363d"/>
-<line x1="350" y1="372" x2="350" y2="548" stroke="#39d353" stroke-width="1.2"/>
-<line x1="590" y1="372" x2="590" y2="548" stroke="#39d353" stroke-width="1.2"/>
-<text x="230" y="420" text-anchor="middle" class="big">412</text>
-<text x="230" y="485" text-anchor="middle" class="metric-title">Total Contributions</text>
-<text x="230" y="525" text-anchor="middle" class="small">Aug 30, 2025 – Present</text>
-<circle cx="470" cy="416" r="50" fill="none" stroke="#19324f" stroke-width="9"/>
-<circle cx="470" cy="416" r="50" fill="none" stroke="#2f81f7" stroke-width="9" stroke-linecap="round" stroke-dasharray="120 330" transform="rotate(-90 470 416)"/>
-<text x="470" y="429" text-anchor="middle" class="big">4</text>
-<text x="470" y="485" text-anchor="middle" class="metric-title">Current Streak</text>
-<text x="470" y="525" text-anchor="middle" class="small">Aug 25 – Aug 28</text>
-<text x="690" y="420" text-anchor="middle" class="big">10</text>
-<text x="690" y="485" text-anchor="middle" class="metric-title">Longest Streak</text>
-<text x="690" y="525" text-anchor="middle" class="small">Feb 17 – Feb 26</text>
-<text x="1062.5" y="382" text-anchor="middle" class="title">Archan Kundu Chowdhury&#39;s Contribution Graph</text>
-<line x1="785" y1="590.0" x2="1340" y2="590.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="771" y="593.0" text-anchor="end" class="axis">0</text>
-<line x1="785" y1="554.0" x2="1340" y2="554.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="771" y="557.0" text-anchor="end" class="axis">4</text>
-<line x1="785" y1="518.0" x2="1340" y2="518.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="771" y="521.0" text-anchor="end" class="axis">8</text>
-<line x1="785" y1="482.0" x2="1340" y2="482.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="771" y="485.0" text-anchor="end" class="axis">11</text>
-<line x1="785" y1="446.0" x2="1340" y2="446.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="771" y="449.0" text-anchor="end" class="axis">15</text>
-<line x1="785" y1="410.0" x2="1340" y2="410.0" stroke="#18304a" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="771" y="413.0" text-anchor="end" class="axis">19</text>
-<text x="785.0" y="614" text-anchor="middle" class="axis">30</text>
-<text x="877.5" y="614" text-anchor="middle" class="axis">04</text>
-<text x="970.0" y="614" text-anchor="middle" class="axis">09</text>
-<text x="1062.5" y="614" text-anchor="middle" class="axis">14</text>
-<text x="1155.0" y="614" text-anchor="middle" class="axis">19</text>
-<text x="1247.5" y="614" text-anchor="middle" class="axis">24</text>
-<text x="1340.0" y="614" text-anchor="middle" class="axis">29</text>
-<polyline points="785.0,523.7 803.5,542.6 822.0,590.0 840.5,571.1 859.0,590.0 877.5,552.1 896.0,580.5 914.5,571.1 933.0,580.5 951.5,590.0 970.0,523.7 988.5,571.1 1007.0,561.6 1025.5,533.2 1044.0,495.3 1062.5,561.6 1081.0,571.1 1099.5,580.5 1118.0,561.6 1136.5,552.1 1155.0,590.0 1173.5,571.1 1192.0,410.0 1210.5,571.1 1229.0,580.5 1247.5,590.0 1266.0,523.7 1284.5,495.3 1303.0,542.6 1321.5,523.7 1340.0,590.0" fill="none" stroke="#2f81f7" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="785.0" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="803.5" cy="542.6" r="3.5" fill="#f0f6fc"><title>5 contributions</title></circle>
-<circle cx="822.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="840.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="859.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="877.5" cy="552.1" r="3.5" fill="#f0f6fc"><title>4 contributions</title></circle>
-<circle cx="896.0" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="914.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="933.0" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="951.5" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="970.0" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="988.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1007.0" cy="561.6" r="3.5" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1025.5" cy="533.2" r="3.5" fill="#f0f6fc"><title>6 contributions</title></circle>
-<circle cx="1044.0" cy="495.3" r="3.5" fill="#f0f6fc"><title>10 contributions</title></circle>
-<circle cx="1062.5" cy="561.6" r="3.5" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1081.0" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1099.5" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="1118.0" cy="561.6" r="3.5" fill="#f0f6fc"><title>3 contributions</title></circle>
-<circle cx="1136.5" cy="552.1" r="3.5" fill="#f0f6fc"><title>4 contributions</title></circle>
-<circle cx="1155.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="1173.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1192.0" cy="410.0" r="3.5" fill="#f0f6fc"><title>19 contributions</title></circle>
-<circle cx="1210.5" cy="571.1" r="3.5" fill="#f0f6fc"><title>2 contributions</title></circle>
-<circle cx="1229.0" cy="580.5" r="3.5" fill="#f0f6fc"><title>1 contributions</title></circle>
-<circle cx="1247.5" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
-<circle cx="1266.0" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="1284.5" cy="495.3" r="3.5" fill="#f0f6fc"><title>10 contributions</title></circle>
-<circle cx="1303.0" cy="542.6" r="3.5" fill="#f0f6fc"><title>5 contributions</title></circle>
-<circle cx="1321.5" cy="523.7" r="3.5" fill="#f0f6fc"><title>7 contributions</title></circle>
-<circle cx="1340.0" cy="590.0" r="3.5" fill="#f0f6fc"><title>0 contributions</title></circle>
+
+<line
+x1="235"
+y1="65"
+x2="235"
+y2="285"
+stroke="#39d353"
+/>
+
+
+<line
+x1="445"
+y1="65"
+x2="445"
+y2="285"
+stroke="#39d353"
+/>
+
+
+<text
+x="130"
+y="130"
+text-anchor="middle"
+class="big"
+>
+415
+</text>
+
+
+<text
+x="130"
+y="180"
+text-anchor="middle"
+class="label"
+>
+Total Contributions
+</text>
+
+
+<text
+x="130"
+y="220"
+text-anchor="middle"
+class="date"
+>
+Aug 30, 2025 – Present
+</text>
+
+
+<circle
+cx="340"
+cy="120"
+r="45"
+fill="none"
+stroke="#19324f"
+stroke-width="8"
+/>
+
+
+<circle
+cx="340"
+cy="120"
+r="45"
+fill="none"
+stroke="#2f81f7"
+stroke-width="8"
+stroke-linecap="round"
+stroke-dasharray="140 300"
+transform="rotate(-90 340 120)"
+/>
+
+
+<text
+x="340"
+y="132"
+text-anchor="middle"
+class="big"
+>
+5
+</text>
+
+
+<text
+x="340"
+y="205"
+text-anchor="middle"
+class="label"
+>
+Current Streak
+</text>
+
+
+<text
+x="340"
+y="240"
+text-anchor="middle"
+class="date"
+>
+Aug 25 – Aug 29
+</text>
+
+
+<text
+x="550"
+y="130"
+text-anchor="middle"
+class="big"
+>
+10
+</text>
+
+
+<text
+x="550"
+y="180"
+text-anchor="middle"
+class="label"
+>
+Longest Streak
+</text>
+
+
+<text
+x="550"
+y="220"
+text-anchor="middle"
+class="date"
+>
+Feb 17 – Feb 26
+</text>
+
+
+<text
+x="917.5"
+y="45"
+text-anchor="middle"
+class="title"
+>
+Archan Kundu Chowdhury's Contribution Graph
+</text>
+
+
+<line
+x1="690"
+y1="270.0"
+x2="1145"
+y2="270.0"
+stroke="#18304a"
+stroke-dasharray="2 3"
+/>
+
+
+<text
+x="680"
+y="273.0"
+text-anchor="end"
+class="axis"
+>
+0
+</text>
+
+
+<line
+x1="690"
+y1="233.0"
+x2="1145"
+y2="233.0"
+stroke="#18304a"
+stroke-dasharray="2 3"
+/>
+
+
+<text
+x="680"
+y="236.0"
+text-anchor="end"
+class="axis"
+>
+4
+</text>
+
+
+<line
+x1="690"
+y1="196.0"
+x2="1145"
+y2="196.0"
+stroke="#18304a"
+stroke-dasharray="2 3"
+/>
+
+
+<text
+x="680"
+y="199.0"
+text-anchor="end"
+class="axis"
+>
+8
+</text>
+
+
+<line
+x1="690"
+y1="159.0"
+x2="1145"
+y2="159.0"
+stroke="#18304a"
+stroke-dasharray="2 3"
+/>
+
+
+<text
+x="680"
+y="162.0"
+text-anchor="end"
+class="axis"
+>
+11
+</text>
+
+
+<line
+x1="690"
+y1="122.0"
+x2="1145"
+y2="122.0"
+stroke="#18304a"
+stroke-dasharray="2 3"
+/>
+
+
+<text
+x="680"
+y="125.0"
+text-anchor="end"
+class="axis"
+>
+15
+</text>
+
+
+<line
+x1="690"
+y1="85.0"
+x2="1145"
+y2="85.0"
+stroke="#18304a"
+stroke-dasharray="2 3"
+/>
+
+
+<text
+x="680"
+y="88.0"
+text-anchor="end"
+class="axis"
+>
+19
+</text>
+
+
+<text
+x="690.0"
+y="292"
+text-anchor="middle"
+class="axis"
+>
+30
+</text>
+
+
+<text
+x="765.8333333333334"
+y="292"
+text-anchor="middle"
+class="axis"
+>
+04
+</text>
+
+
+<text
+x="841.6666666666666"
+y="292"
+text-anchor="middle"
+class="axis"
+>
+09
+</text>
+
+
+<text
+x="917.5"
+y="292"
+text-anchor="middle"
+class="axis"
+>
+14
+</text>
+
+
+<text
+x="993.3333333333333"
+y="292"
+text-anchor="middle"
+class="axis"
+>
+19
+</text>
+
+
+<text
+x="1069.1666666666667"
+y="292"
+text-anchor="middle"
+class="axis"
+>
+24
+</text>
+
+
+<text
+x="1145.0"
+y="292"
+text-anchor="middle"
+class="axis"
+>
+29
+</text>
+
+
+<polyline
+points="690.0,201.8 705.2,221.3 720.3,270.0 735.5,250.5 750.7,270.0 765.8,231.1 781.0,260.3 796.2,250.5 811.3,260.3 826.5,270.0 841.7,201.8 856.8,250.5 872.0,240.8 887.2,211.6 902.3,172.6 917.5,240.8 932.7,250.5 947.8,260.3 963.0,240.8 978.2,231.1 993.3,270.0 1008.5,250.5 1023.7,85.0 1038.8,250.5 1054.0,260.3 1069.2,270.0 1084.3,201.8 1099.5,172.6 1114.7,221.3 1129.8,201.8 1145.0,240.8"
+fill="none"
+stroke="#2f81f7"
+stroke-width="2.5"
+stroke-linejoin="round"
+stroke-linecap="round"
+/>
+
+
+<circle
+cx="690.0"
+cy="201.8"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+7 contributions
+</title>
+</circle>
+
+
+<circle
+cx="705.2"
+cy="221.3"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+5 contributions
+</title>
+</circle>
+
+
+<circle
+cx="720.3"
+cy="270.0"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+0 contributions
+</title>
+</circle>
+
+
+<circle
+cx="735.5"
+cy="250.5"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+2 contributions
+</title>
+</circle>
+
+
+<circle
+cx="750.7"
+cy="270.0"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+0 contributions
+</title>
+</circle>
+
+
+<circle
+cx="765.8"
+cy="231.1"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+4 contributions
+</title>
+</circle>
+
+
+<circle
+cx="781.0"
+cy="260.3"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+1 contributions
+</title>
+</circle>
+
+
+<circle
+cx="796.2"
+cy="250.5"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+2 contributions
+</title>
+</circle>
+
+
+<circle
+cx="811.3"
+cy="260.3"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+1 contributions
+</title>
+</circle>
+
+
+<circle
+cx="826.5"
+cy="270.0"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+0 contributions
+</title>
+</circle>
+
+
+<circle
+cx="841.7"
+cy="201.8"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+7 contributions
+</title>
+</circle>
+
+
+<circle
+cx="856.8"
+cy="250.5"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+2 contributions
+</title>
+</circle>
+
+
+<circle
+cx="872.0"
+cy="240.8"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+3 contributions
+</title>
+</circle>
+
+
+<circle
+cx="887.2"
+cy="211.6"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+6 contributions
+</title>
+</circle>
+
+
+<circle
+cx="902.3"
+cy="172.6"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+10 contributions
+</title>
+</circle>
+
+
+<circle
+cx="917.5"
+cy="240.8"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+3 contributions
+</title>
+</circle>
+
+
+<circle
+cx="932.7"
+cy="250.5"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+2 contributions
+</title>
+</circle>
+
+
+<circle
+cx="947.8"
+cy="260.3"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+1 contributions
+</title>
+</circle>
+
+
+<circle
+cx="963.0"
+cy="240.8"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+3 contributions
+</title>
+</circle>
+
+
+<circle
+cx="978.2"
+cy="231.1"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+4 contributions
+</title>
+</circle>
+
+
+<circle
+cx="993.3"
+cy="270.0"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+0 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1008.5"
+cy="250.5"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+2 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1023.7"
+cy="85.0"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+19 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1038.8"
+cy="250.5"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+2 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1054.0"
+cy="260.3"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+1 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1069.2"
+cy="270.0"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+0 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1084.3"
+cy="201.8"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+7 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1099.5"
+cy="172.6"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+10 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1114.7"
+cy="221.3"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+5 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1129.8"
+cy="201.8"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+7 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1145.0"
+cy="240.8"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+3 contributions
+</title>
+</circle>
+
 </svg>
