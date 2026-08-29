@@ -5,11 +5,43 @@
 ###
 
 <div data-importer="socials" align="center">
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
-  <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="gmail logo"  />
-  <img src="https://img.shields.io/static/v1?message=HackerRank&logo=hackerrank&label=&color=2EC866&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="hackerrank logo"  />
-  <img src="https://img.shields.io/static/v1?message=Medium&logo=medium&label=&color=12100E&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="medium logo"  />
-  <img src="https://img.shields.io/static/v1?message=dev.to&logo=dev.to&label=&color=0A0A0A&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="devto logo"  />
+
+  <a href="https://www.linkedin.com/in/archan-kundu-chowdhury-5a71a1245/" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&style=for-the-badge"
+         height="25"
+         alt="LinkedIn" />
+  </a>
+
+  <a href="mailto:chowdhuryarchan20021@gmail.com">
+    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&style=for-the-badge"
+         height="25"
+         alt="Gmail" />
+  </a>
+
+  <a href="https://leetcode.com/u/Archan0047/" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=LeetCode&logo=leetcode&label=&color=FFA116&logoColor=black&style=for-the-badge"
+         height="25"
+         alt="LeetCode" />
+  </a>
+
+  <a href="https://medium.com/@chowdhuryarchan76" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Medium&logo=medium&label=&color=12100E&logoColor=white&style=for-the-badge"
+         height="25"
+         alt="Medium" />
+  </a>
+
+  <a href="https://dev.to/archan047" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=dev.to&logo=devdotto&label=&color=0A0A0A&logoColor=white&style=for-the-badge"
+         height="25"
+         alt="Dev.to" />
+  </a>
+
+  <a href="https://www.kaggle.com/archankunduchowdhury" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Kaggle&logo=kaggle&label=&color=20BEFF&logoColor=white&style=for-the-badge"
+         height="25"
+         alt="Kaggle" />
+  </a>
+
 </div>
 
 ###
@@ -138,7 +170,7 @@ More on my **[Portfolio →](https://archan47.github.io/Portfolio-Latest/)**
 
 ###
 
-<h3 align="left">🔥 My Stats</h3>
+<h3 align="left">GitHub Stats</h3>
 
 <div align="center">
   <img
@@ -150,21 +182,46 @@ More on my **[Portfolio →](https://archan47.github.io/Portfolio-Latest/)**
 
 ###
 
-<h3 data-importer="text" align="left">Blogs</h3>
+<h3 align="left">My Blogs</h3>
 
-<div data-importer="activities" align="center" style="width: 100%">
-  <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@@chowdhuryarchan76/0">
-    <img style="width: 100%" src="https://github-readme-medium-recent-article.vercel.app/medium/@@chowdhuryarchan76/0" alt="Medium post 1"  />
+<div align="center">
+
+  <a target="_blank"
+     href="https://github-readme-medium-recent-article.vercel.app/medium/@chowdhuryarchan76/0">
+    <img
+      width="100%"
+      src="https://github-readme-medium-recent-article.vercel.app/medium/@chowdhuryarchan76/0"
+      alt="Latest Medium article"
+    />
   </a>
-  <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@@chowdhuryarchan76/1">
-    <img style="width: 100%" src="https://github-readme-medium-recent-article.vercel.app/medium/@@chowdhuryarchan76/1" alt="Medium post 2"  />
+
+  <a target="_blank"
+     href="https://github-readme-medium-recent-article.vercel.app/medium/@chowdhuryarchan76/1">
+    <img
+      width="100%"
+      src="https://github-readme-medium-recent-article.vercel.app/medium/@chowdhuryarchan76/1"
+      alt="Medium article 2"
+    />
   </a>
-  <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@@chowdhuryarchan76/2">
-    <img style="width: 100%" src="https://github-readme-medium-recent-article.vercel.app/medium/@@chowdhuryarchan76/2" alt="Medium post 3"  />
+
+  <a target="_blank"
+     href="https://github-readme-medium-recent-article.vercel.app/medium/@chowdhuryarchan76/2">
+    <img
+      width="100%"
+      src="https://github-readme-medium-recent-article.vercel.app/medium/@chowdhuryarchan76/2"
+      alt="Medium article 3"
+    />
   </a>
-  <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@@chowdhuryarchan76/3">
-    <img style="width: 100%" src="https://github-readme-medium-recent-article.vercel.app/medium/@@chowdhuryarchan76/3" alt="Medium post 4"  />
+
+  <a target="_blank"
+     href="https://github-readme-medium-recent-article.vercel.app/medium/@chowdhuryarchan76/3">
+    <img
+      width="100%"
+      src="https://github-readme-medium-recent-article.vercel.app/medium/@chowdhuryarchan76/3"
+      alt="Medium article 4"
+    />
   </a>
+
 </div>
 
 ###
