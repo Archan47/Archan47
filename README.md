@@ -138,7 +138,15 @@ More on my **[Portfolio →](https://archan47.github.io/Portfolio-Latest/)**
 
 ###
 
-<h3 data-importer="text" align="left">🔥   My Stats :</h3>
+<h3 align="left">🔥 My Stats</h3>
+
+<div align="center">
+  <img
+    src="./assets/github-dashboard.svg"
+    width="100%"
+    alt="Archan's GitHub contribution statistics"
+  />
+</div>
 
 ###
 
