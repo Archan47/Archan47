@@ -67,8 +67,8 @@
 |---|---|
 | **[FitVision](https://github.com/Archan47/FitVison-AI-powered-Fitness-Assistant)** | AI-powered fitness assistant |
 | **Agroveda** | Agri-tech platform — a React + Firebase web app paired with an ESP32-based IoT layer for soil-moisture and motion sensing |
-| **HR Management System** | Full-stack HR platform (React + Flask), built for the Odoo Hackathon |
-| **ML From Scratch** | An ongoing series implementing KNN, Naive Bayes, and Decision Trees from first principles — each one written up as a blog post |
+| **QueryLens** | AI-powered data analysis platform that automates EDA, generates visualizations, and provides natural-language insights from uploaded datasets |
+| **RideShare** | Event-driven ride-sharing backend built with Spring Boot microservices, Kafka, Redis, MySQL, and Docker for ride requests, driver matching, and location-based services |
 
 More on my **[Portfolio →](https://archan47.github.io/Portfolio-Latest/)**
 
