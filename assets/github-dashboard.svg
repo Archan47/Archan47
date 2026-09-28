@@ -80,7 +80,7 @@ y="130"
 text-anchor="middle"
 class="big"
 >
-445
+447
 </text>
 
 
@@ -100,7 +100,7 @@ y="220"
 text-anchor="middle"
 class="date"
 >
-Sep 29, 2025 – Present
+Sep 30, 2025 – Present
 </text>
 
 
@@ -122,7 +122,7 @@ fill="none"
 stroke="#2f81f7"
 stroke-width="8"
 stroke-linecap="round"
-stroke-dasharray="28 300"
+stroke-dasharray="56 300"
 transform="rotate(-90 340 120)"
 />
 
@@ -133,7 +133,7 @@ y="132"
 text-anchor="middle"
 class="big"
 >
-1
+2
 </text>
 
 
@@ -153,7 +153,7 @@ y="240"
 text-anchor="middle"
 class="date"
 >
-Sep 27 – Sep 27
+Sep 27 – Sep 28
 </text>
 
 
@@ -323,7 +323,7 @@ y="292"
 text-anchor="middle"
 class="axis"
 >
-29
+30
 </text>
 
 
@@ -333,7 +333,7 @@ y="292"
 text-anchor="middle"
 class="axis"
 >
-03
+04
 </text>
 
 
@@ -343,7 +343,7 @@ y="292"
 text-anchor="middle"
 class="axis"
 >
-08
+09
 </text>
 
 
@@ -353,7 +353,7 @@ y="292"
 text-anchor="middle"
 class="axis"
 >
-13
+14
 </text>
 
 
@@ -363,7 +363,7 @@ y="292"
 text-anchor="middle"
 class="axis"
 >
-18
+19
 </text>
 
 
@@ -373,7 +373,7 @@ y="292"
 text-anchor="middle"
 class="axis"
 >
-23
+24
 </text>
 
 
@@ -383,12 +383,12 @@ y="292"
 text-anchor="middle"
 class="axis"
 >
-28
+29
 </text>
 
 
 <polyline
-points="690.0,164.3 705.2,85.0 720.3,243.6 735.5,217.1 750.7,217.1 765.8,217.1 781.0,190.7 796.2,243.6 811.3,270.0 826.5,270.0 841.7,270.0 856.8,270.0 872.0,270.0 887.2,243.6 902.3,243.6 917.5,243.6 932.7,243.6 947.8,217.1 963.0,243.6 978.2,243.6 993.3,270.0 1008.5,243.6 1023.7,190.7 1038.8,243.6 1054.0,243.6 1069.2,243.6 1084.3,243.6 1099.5,217.1 1114.7,270.0 1129.8,243.6 1145.0,270.0"
+points="690.0,85.0 705.2,243.6 720.3,217.1 735.5,217.1 750.7,217.1 765.8,190.7 781.0,243.6 796.2,270.0 811.3,270.0 826.5,270.0 841.7,270.0 856.8,270.0 872.0,243.6 887.2,243.6 902.3,243.6 917.5,243.6 932.7,217.1 947.8,243.6 963.0,243.6 978.2,270.0 993.3,243.6 1008.5,190.7 1023.7,243.6 1038.8,243.6 1054.0,243.6 1069.2,243.6 1084.3,217.1 1099.5,270.0 1114.7,243.6 1129.8,217.1 1145.0,270.0"
 fill="none"
 stroke="#2f81f7"
 stroke-width="2.5"
@@ -399,18 +399,6 @@ stroke-linecap="round"
 
 <circle
 cx="690.0"
-cy="164.3"
-r="3"
-fill="#f0f6fc"
->
-<title>
-4 contributions
-</title>
-</circle>
-
-
-<circle
-cx="705.2"
 cy="85.0"
 r="3"
 fill="#f0f6fc"
@@ -422,13 +410,25 @@ fill="#f0f6fc"
 
 
 <circle
-cx="720.3"
+cx="705.2"
 cy="243.6"
 r="3"
 fill="#f0f6fc"
 >
 <title>
 1 contributions
+</title>
+</circle>
+
+
+<circle
+cx="720.3"
+cy="217.1"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+2 contributions
 </title>
 </circle>
 
@@ -459,18 +459,6 @@ fill="#f0f6fc"
 
 <circle
 cx="765.8"
-cy="217.1"
-r="3"
-fill="#f0f6fc"
->
-<title>
-2 contributions
-</title>
-</circle>
-
-
-<circle
-cx="781.0"
 cy="190.7"
 r="3"
 fill="#f0f6fc"
@@ -482,13 +470,25 @@ fill="#f0f6fc"
 
 
 <circle
-cx="796.2"
+cx="781.0"
 cy="243.6"
 r="3"
 fill="#f0f6fc"
 >
 <title>
 1 contributions
+</title>
+</circle>
+
+
+<circle
+cx="796.2"
+cy="270.0"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+0 contributions
 </title>
 </circle>
 
@@ -543,12 +543,12 @@ fill="#f0f6fc"
 
 <circle
 cx="872.0"
-cy="270.0"
+cy="243.6"
 r="3"
 fill="#f0f6fc"
 >
 <title>
-0 contributions
+1 contributions
 </title>
 </circle>
 
@@ -591,24 +591,24 @@ fill="#f0f6fc"
 
 <circle
 cx="932.7"
-cy="243.6"
-r="3"
-fill="#f0f6fc"
->
-<title>
-1 contributions
-</title>
-</circle>
-
-
-<circle
-cx="947.8"
 cy="217.1"
 r="3"
 fill="#f0f6fc"
 >
 <title>
 2 contributions
+</title>
+</circle>
+
+
+<circle
+cx="947.8"
+cy="243.6"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+1 contributions
 </title>
 </circle>
 
@@ -627,18 +627,6 @@ fill="#f0f6fc"
 
 <circle
 cx="978.2"
-cy="243.6"
-r="3"
-fill="#f0f6fc"
->
-<title>
-1 contributions
-</title>
-</circle>
-
-
-<circle
-cx="993.3"
 cy="270.0"
 r="3"
 fill="#f0f6fc"
@@ -650,7 +638,7 @@ fill="#f0f6fc"
 
 
 <circle
-cx="1008.5"
+cx="993.3"
 cy="243.6"
 r="3"
 fill="#f0f6fc"
@@ -662,13 +650,25 @@ fill="#f0f6fc"
 
 
 <circle
-cx="1023.7"
+cx="1008.5"
 cy="190.7"
 r="3"
 fill="#f0f6fc"
 >
 <title>
 3 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1023.7"
+cy="243.6"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+1 contributions
 </title>
 </circle>
 
@@ -711,18 +711,6 @@ fill="#f0f6fc"
 
 <circle
 cx="1084.3"
-cy="243.6"
-r="3"
-fill="#f0f6fc"
->
-<title>
-1 contributions
-</title>
-</circle>
-
-
-<circle
-cx="1099.5"
 cy="217.1"
 r="3"
 fill="#f0f6fc"
@@ -734,7 +722,7 @@ fill="#f0f6fc"
 
 
 <circle
-cx="1114.7"
+cx="1099.5"
 cy="270.0"
 r="3"
 fill="#f0f6fc"
@@ -746,13 +734,25 @@ fill="#f0f6fc"
 
 
 <circle
-cx="1129.8"
+cx="1114.7"
 cy="243.6"
 r="3"
 fill="#f0f6fc"
 >
 <title>
 1 contributions
+</title>
+</circle>
+
+
+<circle
+cx="1129.8"
+cy="217.1"
+r="3"
+fill="#f0f6fc"
+>
+<title>
+2 contributions
 </title>
 </circle>
 
